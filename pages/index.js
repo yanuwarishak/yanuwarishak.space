@@ -1,82 +1,73 @@
-import Head from 'next/head'
+import Image from "next/image";
+import Link from "next/link";
+import Container from "@/components/container/Container";
+import {
+  JavascriptIcon,
+  ReactIcon,
+  NextjsIcon,
+  NodeIcon,
+} from "@/components/icons";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Container>
+      <div className="absolute top-0 left-0">
+        <h1 className="p-6 font-semibold text-lg md:hidden">Home</h1>
+      </div>
+      {/* Intro Section */}
+      <section className="flex flex-col md:flex-row-reverse mb-8">
+        <div className="avatar w-20 md:w-auto mb-4 md:mb-0 self-center">
+          <Image
+            className="rounded-full"
+            src="/assets/images/avatar.png"
+            width="145px"
+            height="145px"
+          />
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+        <div className="flex flex-col">
+          <h1 className="text-4xl font-bold self-center text-center md:self-start">
+            Yanuwar Ishak
+          </h1>
+          <h2 className=" text-xl mt-2 text-gray-200 font-semibold self-center md:self-start">
+            Front-end Developer
+          </h2>
+          <p className="w-10/12 sm:w-8/12 pt-4 text-gray-400 self-center md:self-start text-center md:text-left">
+            JavaScript enthusiast who well-versed in React ecosystem and ready
+            to turn design into working product.
+          </p>
+        </div>
+      </section>
+      {/* Tech Stack Section */}
+      <section className="flex flex-col mb-8">
+        <h1 className="text-xl font-semibold text-gray-200 mb-4">
+          My Tech Stack
+        </h1>
+        <div className="grid grid-cols-4 gap-x-3 items-center text-center">
+          <div className="bg-gray-900 p-2 flex justify-center items-center h-32">
+            <JavascriptIcon />
+          </div>
+          <div className="bg-gray-900 p-2 flex justify-center items-center h-32">
+            <ReactIcon />
+          </div>
+          <div className="bg-gray-900 p-2 flex justify-center items-center h-32">
+            <NextjsIcon />
+          </div>
+          <div className="bg-gray-900 p-2 flex justify-center items-center h-32">
+            <NodeIcon />
+          </div>
+        </div>
+        <Link href="/tech">
+          <a className="mt-4 self-end text-gray-200 hover:text-blue-400 hover:underline">
+            See complete list &#8594;
+          </a>
+        </Link>
+      </section>
+      {/* Recent Project Section */}
+      <section>
+        <h1 className="text-xl font-semibold text-gray-200 mb-4">
+          Recent Project
+        </h1>
+      </section>
+    </Container>
+  );
 }
