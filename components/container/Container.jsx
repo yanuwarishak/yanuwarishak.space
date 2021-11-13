@@ -43,13 +43,11 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <div className="flex flex-col mx-auto max-w-2xl md:px-0 p-6 h-screen relative">
+      <div className="flex flex-col mx-auto max-w-2xl md:px-0 p-6 relative h-full">
         <header>
           <Navbar />
         </header>
-        <main className="flex flex-col justify-center mt-6">
-          {children}
-        </main>
+        <main className="flex flex-col justify-start my-8 min-h-screen">{children}</main>
         <footer className="flex">
           <Footer />
         </footer>

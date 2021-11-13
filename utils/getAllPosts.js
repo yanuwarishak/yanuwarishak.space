@@ -25,5 +25,11 @@ export function getAllPosts() {
     };
   });
 
+  posts.sort(
+    (a, b) =>
+      Number(new Date(b.frontmatter.publishedAt)) -
+      Number(new Date(a.frontmatter.publishedAt))
+  );
+
   return posts;
 }

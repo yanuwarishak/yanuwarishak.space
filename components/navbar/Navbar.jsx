@@ -6,23 +6,23 @@ function NavItem({ href, text }) {
   const router = useRouter();
 
   return (
-    <li
-      className={`hidden mx-1 md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:text-indigo-200 hover:bg-gray-700 transition-all ${
-        router.asPath == href ? "bg-gray-700" : ""
-      }`}
-    >
-      <Link href={href}>
-        <a
-          className={
-            router.asPath == href
-              ? "font-semibold text-indigo-200"
-              : "font-normal"
-          }
+    <Link href={href}>
+      <a
+        className={
+          router.asPath == href
+            ? "font-semibold text-indigo-200"
+            : "font-normal"
+        }
+      >
+        <li
+          className={`hidden mx-1 md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:text-indigo-200 hover:bg-gray-700 transition-all cursor-pointer ${
+            router.asPath == href ? "bg-gray-700" : ""
+          }`}
         >
           {text}
-        </a>
-      </Link>
-    </li>
+        </li>
+      </a>
+    </Link>
   );
 }
 

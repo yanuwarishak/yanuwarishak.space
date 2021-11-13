@@ -13,17 +13,38 @@ export function getAllProjects() {
 
     // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
-      path.join("data/blog", filename),
+      path.join("data/project", filename),
       "utf-8"
     );
 
     const { data: frontmatter } = matter(markdownWithMeta);
+    const {
+      title,
+      finishedAt,
+      category,
+      techs,
+      projectType,
+      excerpt,
+      image,
+      demo,
+    } = frontmatter;
 
     return {
       slug,
-      frontmatter,
+      title,
+      finishedAt,
+      category,
+      techs,
+      projectType,
+      excerpt,
+      image,
+      demo,
     };
   });
+
+  projects.sort(
+    (a, b) => Number(new Date(b.finishedAt)) - Number(new Date(a.finishedAt))
+  );
 
   return projects;
 }

@@ -1,5 +1,4 @@
 import Container from "@/components/container/Container";
-
 import TopTracks from "@/components/spotify/TopTracks";
 
 export default function About() {
@@ -11,7 +10,7 @@ export default function About() {
       {/* About me section */}
       <section className="flex flex-col mb-8">
         <h1 className="text-5xl font-bold mb-8">About Me</h1>
-        <div className="prose text-gray-300">
+        <div className="prose max-w-none text-gray-400">
           <p>
             Helloo my name is <b>Yanuwar</b>. I'm a Web developer mainly focused
             on Front-end Development. My journey as a web developer started in
@@ -62,7 +61,7 @@ export default function About() {
         </div>
       </section>
       {/* Spotify Section */}
-      <section className="mb-8 w-full">
+      <section className="w-full">
         <div className="flex flex-col">
           <h1 className="text-3xl font-semibold text-gray-200 mb-1">Spotify</h1>
           <h1 className="text-2xl text-gray-200">Monthly Top Tracks</h1>

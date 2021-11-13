@@ -4,31 +4,26 @@ import PostList from "@/components/post-list/PostList";
 import { getAllPosts } from "utils/getAllPosts";
 
 export default function Blog({ posts }) {
-  const filteredBlogPosts = posts.sort(
-    (a, b) =>
-      Number(new Date(b.frontmatter.publishedAt)) -
-      Number(new Date(a.frontmatter.publishedAt))
-  );
-
   return (
     <Container title="Blog – Yanuwar Ishak">
       <div className="absolute top-0 left-0 ">
         <h1 className="p-6 font-semibold text-lg md:hidden">Blog</h1>
       </div>
-      <div className="pb-2 w-full">
+      <section className="w-full">
         <div className="flex flex-col">
           <div className="flex flex-col mb-10">
-            <h1 className="text-5xl font-bold">Blog</h1>
-            <p className=" w-10/12 pt-4 text-gray-400">
-              JavaScript enthusiast who well versed in React ecosystem and ready
-              to turn design into working product.
+            <h1 className="text-5xl font-bold mb-2">Blog</h1>
+            <p className=" pt-4 text-gray-400">
+              Writing has always been a hard thing for me, therefore I've decided
+              to force myself to write things that I've learned. Some words may
+              feel out of place so I guess I'm sorry in advance.
             </p>
           </div>
-          {filteredBlogPosts.map((post, idx) => (
+          {posts.map((post, idx) => (
             <PostList posts={post} key={idx} />
           ))}
         </div>
-      </div>
+      </section>
     </Container>
   );
 }

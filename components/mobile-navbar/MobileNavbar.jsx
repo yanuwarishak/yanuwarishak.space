@@ -5,7 +5,9 @@ function LinkList({ href, text }) {
   return (
     <li className="flex flex-col justify-center text-sm font-semibold first:border-t first:border-gray-600">
       <Link href={href}>
-        <a className="border-b border-gray-600 text-gray-100 w-auto py-4">{text}</a>
+        <a className="border-b border-gray-600 text-gray-100 w-auto py-4">
+          {text}
+        </a>
       </Link>
     </li>
   );
@@ -32,7 +34,7 @@ function BurgerIcon() {
 
 function MenuModal() {
   return (
-    <div className="flex flex-col h-screen bg-[#121212] mx-auto absolute top-0 left-0 right-0 z-10">
+    <div className="flex flex-col h-screen bg-[#121212] mx-auto absolute top-0 left-0 right-0 z-10 animate-slideLeft">
       <div className="flex justify-end">
         <svg
           className="h-6 w-6 text-gray-100"
@@ -87,7 +89,7 @@ export default function MobileNavbar() {
         type="button"
         onClick={toggleMenu}
       >
-        {!isOpen && <BurgerIcon />}
+        <BurgerIcon />
         {isOpen && <MenuModal />}
       </button>
     </div>

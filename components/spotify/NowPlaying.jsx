@@ -1,4 +1,66 @@
+import { useEffect } from "react";
 import useSWR from "swr";
+import { animate } from "motion";
+
+function VisualizerBar() {
+  useEffect(() => {
+    animate(
+      "#bar1",
+      {
+        transform: [
+          "scaleY(1.0) translateY(0rem)",
+          "scaleY(1.5) translateY(-0.082rem)",
+          "scaleY(1.0) translateY(0rem)",
+        ],
+      },
+      {
+        duration: 2.0,
+        repeat: Infinity,
+        easing: ["ease-in-out"],
+      }
+    );
+    animate(
+      "#bar2",
+      {
+        transform: [
+          "scaleY(1.0) translateY(0rem)",
+          "scaleY(3) translateY(-0.083rem)",
+          "scaleY(1.0) translateY(0rem)",
+        ],
+      },
+      {
+        delay: 0.2,
+        duration: 1.75,
+        repeat: Infinity,
+        easing: ["ease-in-out"],
+      }
+    );
+    animate(
+      "#bar3",
+      {
+        transform: [
+          "scaleY(1.0)  translateY(0rem)",
+          "scaleY(0.5) translateY(0.37rem)",
+          "scaleY(1.0)  translateY(0rem)",
+        ],
+      },
+      {
+        delay: 0.3,
+        duration: 2.0,
+        repeat: Infinity,
+        easing: ["ease-in-out"],
+      }
+    );
+  }, []);
+
+  return (
+    <div className="w-auto flex items-end overflow-hidden my-auto">
+      <span id="bar1" className="w-[2px] mr-[2px] h-2 bg-gray-800" />
+      <span id="bar2" className="w-[2px] mr-[2px] h-1 bg-gray-800" />
+      <span id="bar3" className="w-[2px] mr-[4px] h-3 bg-gray-800" />
+    </div>
+  );
+}
 
 function SpotifyIcon() {
   return (
@@ -53,21 +115,24 @@ export default function NowPlaying() {
             {song.image ? (
               <img src={song.image} width="80" height="80" />
             ) : (
-              <h1 className="text-center p-4 text-gray-700 text-4xl">X</h1>
+              <p className="text-center p-4 text-gray-700 text-4xl">X</p>
             )}
           </div>
-          <div className="flex flex-col ">
-            <h1 className="font-semibold text-sm md:text-normal">
-              Now Playing:
-            </h1>
-            <a href={song.link} target="_blank" rel="noopener noreferrer">
-              <h1 className="font-semibold text-base md:text-lg w-full hover:opacity-80">
-                {song.title}
+          <div className="flex flex-col my-auto">
+            <div className="flex flex-row items-start">
+              <VisualizerBar />
+              <h1 className="font-semibold text-sm md:text-normal">
+                Now Playing:
               </h1>
+            </div>
+            <a href={song.link} target="_blank" rel="noopener noreferrer">
+              <h2 className="font-semibold text-base md:text-lg w-full hover:opacity-80">
+                {song.title}
+              </h2>
             </a>
-            <h1 className="font-normal">
+            <h2 className="font-normal">
               by {song.artist ? song.artist : "Local File"}
-            </h1>
+            </h2>
           </div>
         </div>
       ) : (
