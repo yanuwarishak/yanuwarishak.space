@@ -1,35 +1,34 @@
 import Container from "@/components/container/Container";
 import PostList from "@/components/post-list/PostList";
 
-import { getAllPosts } from "utils/getAllPosts";
+import { getAllPosts } from "utils/getLocalData";
 
 export default function Blog({ posts }) {
   return (
     <Container title="Blog – Yanuwar Ishak">
-      <div className="absolute top-0 left-0 ">
-        <h1 className="p-6 font-semibold text-lg md:hidden">Blog</h1>
+      <div className="relative">
+        <h1 className="text-5xl font-bold z-1">Blog</h1>
+        <p className="text-7xl font-bold text-[#202020] absolute -top-8 -left-6 z-[-1] cursor-default ">
+          ブログ
+        </p>
       </div>
-      <section className="w-full">
-        <div className="flex flex-col">
-          <div className="flex flex-col mb-10">
-            <h1 className="text-5xl font-bold mb-2">Blog</h1>
-            <p className=" pt-4 text-gray-400">
-              Writing has always been a hard thing for me, therefore I've decided
-              to force myself to write things that I've learned. Some words may
-              feel out of place so I guess I'm sorry in advance.
-            </p>
-          </div>
-          {posts.map((post, idx) => (
-            <PostList posts={post} key={idx} />
-          ))}
-        </div>
-      </section>
+      <p className=" text-gray-400 leading-relaxed">
+        Writing has always been a hard thing for me, therefore I've decided to
+        force myself to write things that I've learned. Some words may feel out
+        of place so I guess I'm sorry in advance.
+      </p>
+
+      <div className="flex flex-col gap-2">
+        {posts.map((post, idx) => (
+          <PostList posts={post} key={idx} />
+        ))}
+      </div>
     </Container>
   );
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts();
+  const posts = getAllPosts("data/blog");
 
   return {
     props: {

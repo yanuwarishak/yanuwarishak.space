@@ -6,6 +6,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ isPlaying: false });
   }
   const song = await response.json();
-  
+
   return res.status(200).json(song);
 }

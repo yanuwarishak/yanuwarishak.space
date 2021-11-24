@@ -1,66 +1,4 @@
-import { useEffect } from "react";
 import useSWR from "swr";
-import { animate } from "motion";
-
-function VisualizerBar() {
-  useEffect(() => {
-    animate(
-      "#bar1",
-      {
-        transform: [
-          "scaleY(1.0) translateY(0rem)",
-          "scaleY(1.5) translateY(-0.082rem)",
-          "scaleY(1.0) translateY(0rem)",
-        ],
-      },
-      {
-        duration: 2.0,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-    animate(
-      "#bar2",
-      {
-        transform: [
-          "scaleY(1.0) translateY(0rem)",
-          "scaleY(3) translateY(-0.083rem)",
-          "scaleY(1.0) translateY(0rem)",
-        ],
-      },
-      {
-        delay: 0.2,
-        duration: 1.75,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-    animate(
-      "#bar3",
-      {
-        transform: [
-          "scaleY(1.0)  translateY(0rem)",
-          "scaleY(0.5) translateY(0.37rem)",
-          "scaleY(1.0)  translateY(0rem)",
-        ],
-      },
-      {
-        delay: 0.3,
-        duration: 2.0,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-  }, []);
-
-  return (
-    <div className="w-auto flex items-end overflow-hidden my-auto">
-      <span id="bar1" className="w-[2px] mr-[2px] h-2 bg-gray-800" />
-      <span id="bar2" className="w-[2px] mr-[2px] h-1 bg-gray-800" />
-      <span id="bar3" className="w-[2px] mr-[4px] h-3 bg-gray-800" />
-    </div>
-  );
-}
 
 function SpotifyIcon() {
   return (
@@ -86,7 +24,7 @@ export default function NowPlaying() {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/spotify/now-playing", fetcher, {
     revalidateOnFocus: true,
-    refreshInterval: 240000,
+    refreshInterval: 480000,
   });
 
   let song = {
@@ -94,7 +32,6 @@ export default function NowPlaying() {
     artist: "Local File",
     title: "",
     link: "",
-    image: "",
   };
 
   if (data) {
@@ -103,43 +40,43 @@ export default function NowPlaying() {
       title: data?.item?.name,
       artist: data?.item?.artists?.map((_artist) => _artist.name).join(", "),
       link: data?.item?.external_urls?.spotify,
-      image: data?.item?.album?.images[1]?.url,
     };
   }
 
   return (
-    <div className="p-4 w-full bg-[#1DB954] min-h-[95px] my-6 text-black">
+    <div className="p-4 w-full bg-[#1DB954] text-black">
       {song.isPlaying ? (
-        <div className="flex flex-row cursor-default">
-          <div className="mr-4 my-auto min-w-[80px] min-h-[80px] bg-gray-300 relative">
-            {song.image ? (
-              <img src={song.image} width="80" height="80" />
-            ) : (
-              <p className="text-center p-4 text-gray-700 text-4xl">X</p>
-            )}
+        <div className="flex flex-row items-center">
+          <div className="w-5 xs:w-10 mr-3">
+            <SpotifyIcon />
           </div>
-          <div className="flex flex-col my-auto">
-            <div className="flex flex-row items-start">
-              <VisualizerBar />
-              <h1 className="font-semibold text-sm md:text-normal">
-                Now Playing:
-              </h1>
-            </div>
-            <a href={song.link} target="_blank" rel="noopener noreferrer">
-              <h2 className="font-semibold text-base md:text-lg w-full hover:opacity-80">
-                {song.title}
+          <div className="flex flex-col">
+            <h1 className="font-semibold text-sm md:text-normal">
+              Now Playing:
+            </h1>
+            <div className="flex flex-row gap-2 items-baseline flex-wrap">
+              {song.link && (
+                <a href={song.link} target="_blank" rel="noopener noreferrer">
+                  <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
+                    {song.title}
+                  </h2>
+                </a>
+              )}
+              {!song.link && (
+                <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
+                  {song.title}
+                </h2>
+              )}
+              <h2 className="text-sm md:text-normal align-text-bottom">
+                by {song.artist ? song.artist : "Local File"}
               </h2>
-            </a>
-            <h2 className="font-normal">
-              by {song.artist ? song.artist : "Local File"}
-            </h2>
+            </div>
           </div>
         </div>
       ) : (
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2">
           <a
-            className="mx-auto cursor-pointer w-10 hover:opacity-80 mb-2"
-            alt="Play it on Spotify"
+            className="mx-auto cursor-pointer w-10 hover:opacity-80"
             href="https://open.spotify.com/user/212rshe3omsf3edodvt4rqb7q?si=5b3281c13e964fe4"
             target="_blank"
             rel="noopener noreferrer"

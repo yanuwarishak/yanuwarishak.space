@@ -10,7 +10,7 @@ export default function Container(props) {
   const meta = {
     title: "Yanuwar Ishak – Front-end Developer.",
     description: `Front-end developer, JavaScript enthusiast, and lifelong learner.`,
-    image: "assets/images/banner.png",
+    image: "https://yanuwarishak.space/assets/images/banner.png",
     type: "website",
     ...customMeta,
   };
@@ -43,12 +43,14 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <div className="flex flex-col mx-auto max-w-2xl md:px-0 p-6 relative h-full">
-        <header>
+      <div className="flex flex-col max-w-2xl md:px-0 p-6 self-center relative mx-auto gap-10">
+        <header className="z-50 mb-6">
           <Navbar />
         </header>
-        <main className="flex flex-col justify-start my-8 min-h-screen">{children}</main>
-        <footer className="flex">
+        <main className="flex flex-col justify-start min-h-[75vh] z-10 gap-8">
+          {children}
+        </main>
+        <footer>
           <Footer />
         </footer>
       </div>

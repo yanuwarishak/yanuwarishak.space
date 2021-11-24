@@ -1,9 +1,4 @@
-const {
-  screens,
-  spacing,
-  fontFamily,
-  opacity,
-} = require("tailwindcss/defaultTheme");
+const { fontFamily, screens } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
@@ -11,37 +6,47 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      xs: "500px",
+      xs: "475px",
       ...screens,
     },
     extend: {
+      screens: {
+        "2lg": "1120px",
+      },
+      fontFamily: {
+        sans: ["IBM Plex Sans", ...fontFamily.sans],
+      },
       keyframes: {
-        slideLeft: {
+        slideDown: {
           "0%": { transform: "translateY(-40px)", opacity: 0 },
           "100%": { transform: "translateY(0px)", opacity: 1 },
         },
+        zoom: {
+          transform: "scale(1.5)",
+        },
       },
       animation: {
-        slideLeft: "slideLeft 0.5s ease-in-out",
+        slideDown: "slideDown 0.25s ease-in-out",
+        zoom: "zoom 0.25s ease-in-out",
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            fontSize: "1rem",
             color: theme("colors.gray.300"),
             a: {
-              color: theme("colors.blue.400"),
+              color: theme("colors.purple.400"),
               "&:hover": {
-                color: theme("colors.blue.600"),
+                color: theme("colors.purple.600"),
               },
-              code: { color: theme("colors.blue.400") },
+              code: { color: theme("colors.purple.400") },
             },
             blockquote: {
               borderLeftColor: theme("colors.gray.700"),
-              color: theme("colors.gray.300"),
+              color: theme("colors.gray.200"),
             },
             "h1,h2,h3,h4": {
               color: theme("colors.gray.100"),
-              "scroll-margin-top": spacing[32],
             },
             hr: { borderColor: theme("colors.gray.700") },
             ol: {

@@ -4,22 +4,33 @@ import Image from "next/image";
 export default function ProjectList({ project }) {
   return (
     <div
-      className="flex flex-col mt-4 bg-[#202020] rounded-md relative"
+      className="flex flex-col bg-[#1d1d1d] rounded-md relative"
       key={project.title}
     >
-      <p className="absolute top-2 right-2 text-gray-100 py-1 px-2 bg-purple-500 font-semibold rounded-xl text-sm">
-        {project.category}
+      <p className="absolute top-2 right-2 text-gray-100 py-1 px-2 bg-purple-600 font-semibold rounded-xl text-sm z-10 select-none cursor-default">
+        {project.category[1]}
       </p>
-      <img src={project.image} alt={project.title} />
-      <div className="flex flex-col w-full p-2 py-3 rounded-b-xl cursor-default">
+      <Link href={`/project/${project.slug}`}>
+        <a>
+          <Image
+            className="cursor-pointer hover:scale-110 transition duration-500 filter opacity-80 hover:opacity-100"
+            src={project.image}
+            alt={project.title}
+            width={1366}
+            height={768}
+            priority
+          />
+        </a>
+      </Link>
+      <div className="flex flex-col w-full p-2 py-3 rounded-b-xl cursor-default overflow-hidden">
         <div className="flex flex-row mb-2 justify-between w-full">
           <div>
-            <p className="text-xs py-1 text-gray-400">{project.projectType}</p>
+            <p className="text-sm py-1 text-gray-400">{project.category[0]}</p>
           </div>
-          <div className="flex flex-row mr-[-2px]">
+          <div className="flex flex-row gap-1 flex-wrap justify-end w-3/5">
             {project.techs.map((tech) => (
               <p
-                className="text-xs mr-1 p-1 bg-gray-700 rounded-md"
+                className="bg-[#303030] rounded-md text-xs leading-6 px-1 h-[fit-content]"
                 key={project.title + tech}
               >
                 {tech}
@@ -28,8 +39,8 @@ export default function ProjectList({ project }) {
           </div>
         </div>
         <Link href={`/project/${project.slug}`}>
-          <a className="w-max">
-            <h2 className="mb-1 font-medium text-lg text-gray-200 hover:text-purple-400 hover:underline">
+          <a>
+            <h2 className="mb-1 font-medium text-lg text-gray-200 hover:text-purple-500 hover:underline overflow-ellipsis">
               {project.title}
             </h2>
           </a>

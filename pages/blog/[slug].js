@@ -1,35 +1,20 @@
-import Image from "next/image";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
+import { getIndividualPost, getPostsPath } from "utils/getLocalData";
+import MDXComponents from "@/components/MDXComponents";
 
-import Container from "@/components/container/Container";
+import BlogContainer from "@/components/container/BlogContainer";
 
-const components = { Image };
-
-export default function Post({ frontmatter, slug, article }) {
+export default function Post({ post, slug, article }) {
   return (
-    <Container>
-      <div>
-        <section className="prose max-w-none">
-          <MDXRemote {...article} components={components} />
-        </section>
-      </div>
-    </Container>
+    <BlogContainer post={post} slug={slug}>
+      <MDXRemote {...article} components={MDXComponents} />
+    </BlogContainer>
   );
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("data/blog"));
-
-  const paths = files.map((filename) => ({
-    params: {
-      slug: filename.replace(".mdx", ""),
-    },
-  }));
-
+  const paths = getPostsPath("data/blog");
   return {
     paths,
     fallback: false,
@@ -37,16 +22,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markdownWithMeta = fs.readFileSync(
-    path.join("data/blog", slug + ".mdx"),
-    "utf-8"
-  );
-
-  const { data: frontmatter, content } = matter(markdownWithMeta);
+  const { post, content } = getIndividualPost("data/blog", slug);
   const article = await serialize(content);
+
   return {
     props: {
-      frontmatter,
+      post,
       slug,
       article,
     },

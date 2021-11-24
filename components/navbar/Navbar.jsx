@@ -6,30 +6,26 @@ function NavItem({ href, text }) {
   const router = useRouter();
 
   return (
-    <Link href={href}>
-      <a
-        className={
-          router.asPath == href
-            ? "font-semibold text-indigo-200"
-            : "font-normal"
-        }
-      >
-        <li
-          className={`hidden mx-1 md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:text-indigo-200 hover:bg-gray-700 transition-all cursor-pointer ${
-            router.asPath == href ? "bg-gray-700" : ""
-          }`}
-        >
-          {text}
-        </li>
-      </a>
-    </Link>
+    <li>
+      <Link href={href}>
+        <a className="font-normal">
+          <h2
+            className={`mx-1 px-3 py-2 rounded-lg  transition-all cursor-pointer ${
+              router.asPath == href ? "bg-gray-800" : "hover:bg-gray-900"
+            }`}
+          >
+            {text}
+          </h2>
+        </a>
+      </Link>
+    </li>
   );
 }
 
 export default function Navbar() {
   return (
-    <div className="flex flex-col justify-center">
-      <nav className="flex items-center justify-end w-full relative border-gray-700 bg-opacity-60 text-gray-400 pb-4 md:pb-8">
+    <nav className="flex flex-col justify-center">
+      <div className="flex items-center justify-end w-full relative border-gray-700 bg-opacity-60 text-gray-200">
         <MobileNavbar />
         <ul className="hidden md:flex text-center w-min" id="menu">
           <NavItem href="/" text="Home" />
@@ -38,7 +34,7 @@ export default function Navbar() {
           <NavItem href="/tech" text="Tech" />
           <NavItem href="/about" text="About" />
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

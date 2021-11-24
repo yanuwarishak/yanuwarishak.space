@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://yanuwarishak.space/sitemap.xml

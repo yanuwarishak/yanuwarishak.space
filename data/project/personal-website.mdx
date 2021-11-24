@@ -1,0 +1,57 @@
+---
+title: "yanuwarishak.space"
+publishedAt: "2021-11-20"
+category: ["Learning Project", "Web"]
+techs: ["Next.js", "Tailwind css"]
+excerpt: "A personal website to try out new technology and showcasing my portfolio."
+image: "/assets/images/project/yanuwarishak-space.jpg"
+---
+
+<OpenSource link={"https://github.com/yanuwarishak/yanuwarishak.space"} />
+
+Having a personal website is one of my goal as a developer. This website is my second
+attempt of making a personal website, the first one turns out wasn't really as good
+as I hope. Back then I was still learning on utilizing React without paying attention
+to stuff like SEO and such. You can take a look at my previous website [here](https://thirsty-brahmagupta-fa884b.netlify.app/).
+
+This website however was developed with those thing in mind.
+I was doing research about SEO and stuff and found that static website considerably have better SEO.
+Considering that I use Next.js for my second trial of making a personal website.
+
+I was doing a lot of research and trying to find inspiration until I ended up on [Lee's Personal Site](https://leerob.io).
+This site is heavily influenced by Lee's website, thought I tried my best to give my own taste.
+I was planning to use a headless CMS for managing the content inside this website, but after reading through Lee's post I found that it is much
+better to use Markdown file as CMS if it's a website for personal use.
+
+## Why Next.js
+
+My initial reason was mainly SEO, but in the process of developing this website
+I discovered that Next.js give a much better Developer Experience compared to developing just in React.
+You can create many type of websites (SSR, SSG, CSR, ISR) using Next.js.
+The routing is easy to understand, development and build time is fast since the latest Next.js already uses SWC,
+and the API creation alongside UseSWR hooks is super easy to integrate to the app.
+I learned a lot by developing this website using Next.js, and that makes me sure that I have a lot more to learn.
+
+## Other technology that I use
+
+I use Tailwind CSS for styling. Tailwind CSS is basically a utility-first CSS framework for rapidly building custom user interfaces [[1]](https://www.geeksforgeeks.org/introduction-to-tailwind-css/).
+It gives an easier way of managing components style eliminating the needs of switching between css file and component file.
+At first I do struggling a bit memorizing the predefined utility classes name, but as the time goes it's alreay becoming my second nature on writing css.
+Personally I think adopting Tailwind is not hard, the docs is written really concise
+and they also provide free learning material uploaded on [Tailwind Labs on Youtube](https://www.youtube.com/tailwindlabs).
+
+I use Markdown files as content management system for this website, MDX to be precise.
+Practically by using MDX you can put React component inside your Markdown file,
+this enable me to use Next.js Image components that give a much better responsive advantage
+and helps avoiding CLS (Content Layout Shift).
+
+### What it taught me
+
+Some takeaways I learned by doing this project:
+
+- Next.js (SSG)
+- Creating API in Next.js using Node.js
+- UseSWR Hooks
+- Tailwind CSS
+- MDX and MDXRemote
+- Playing around with Spotify API

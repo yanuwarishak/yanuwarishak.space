@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/fonts/ibm-plex-sans-var.woff2) format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100);
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(39, 39, 39);
+}
+
+.neon-text:hover {
+  color: white;
+  text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 38px #7508a8, 0 0 73px #7508a8,
+    0 0 94px #7508a8, 0 0 140px #7508a8;
+}

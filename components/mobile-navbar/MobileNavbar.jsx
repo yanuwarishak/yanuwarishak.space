@@ -34,7 +34,7 @@ function BurgerIcon() {
 
 function MenuModal() {
   return (
-    <div className="flex flex-col h-screen bg-[#121212] mx-auto absolute top-0 left-0 right-0 z-10 animate-slideLeft">
+    <div className="flex flex-col h-screen bg-[#121212] mx-auto p-6 fixed top-0 left-0 right-0 bottom-0 z-50 animate-slideDown">
       <div className="flex justify-end">
         <svg
           className="h-6 w-6 text-gray-100"
