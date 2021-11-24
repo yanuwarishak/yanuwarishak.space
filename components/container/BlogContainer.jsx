@@ -62,7 +62,7 @@ export default function BlogContainer({ slug, post, children }) {
           />
         </div>
         <section className="prose w-full max-w-none">{children}</section>
-        <div className="flex flex-row justify-end w-full">
+        <div className="flex flex-row justify-end w-full -mb-4">
           <EditPost url={editUrl(slug)} />
         </div>
       </div>
