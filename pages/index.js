@@ -62,7 +62,7 @@ export default function Home({ recentPosts, recentProjects }) {
             recentPosts.map((post, idx) => <PostList posts={post} key={idx} />)}
         </div>
         <Link href="/blog">
-          <a className="text-purple-400 w-max hover:text-purple-600 underline flex justify-end md:justify-start ease-in-out duration-300">
+          <a className="text-purple-400 w-max hover:text-purple-500 underline flex justify-end md:justify-start ease-in-out duration-300">
             See all posts &#8594;
           </a>
         </Link>
@@ -82,7 +82,7 @@ export default function Home({ recentPosts, recentProjects }) {
             ))}
         </div>
         <Link href="/project">
-          <a className="text-purple-400 w-max hover:text-purple-600 underline flex justify-end md:justify-start ease-in-out duration-300">
+          <a className="text-purple-400 w-max hover:text-purple-500 underline flex justify-end md:justify-start ease-in-out duration-300">
             See all projects &#8594;
           </a>
         </Link>
@@ -106,7 +106,7 @@ export default function Home({ recentPosts, recentProjects }) {
           ))}
         </div>
         <Link href="/tech">
-          <a className=" text-purple-400 w-max hover:text-purple-600 underline flex justify-end md:justify-start ease-in-out duration-300">
+          <a className=" text-purple-400 w-max hover:text-purple-500 underline flex justify-end md:justify-start ease-in-out duration-300">
             See complete list &#8594;
           </a>
         </Link>

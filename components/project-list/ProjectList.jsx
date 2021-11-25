@@ -38,13 +38,13 @@ export default function ProjectList({ project }) {
             ))}
           </div>
         </div>
-        <Link href={`/project/${project.slug}`}>
-          <a>
-            <h2 className="mb-1 font-medium text-lg text-gray-200 hover:text-purple-500 hover:underline overflow-ellipsis">
+        <h2 className="mb-1 font-medium text-lg text-gray-200 ">
+          <Link href={`/project/${project.slug}`}>
+            <a className="hover:text-purple-500 hover:underline overflow-ellipsis">
               {project.title}
-            </h2>
-          </a>
-        </Link>
+            </a>
+          </Link>
+        </h2>
         <p className="text-gray-400">{project.excerpt}</p>
       </div>
     </div>

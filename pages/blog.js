@@ -18,7 +18,7 @@ export default function Blog({ posts }) {
         of place so I guess I'm sorry in advance.
       </p>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4">
         {posts.map((post, idx) => (
           <PostList posts={post} key={idx} />
         ))}

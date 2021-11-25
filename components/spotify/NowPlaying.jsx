@@ -47,30 +47,28 @@ export default function NowPlaying() {
     <div className="p-4 w-full bg-[#1DB954] text-black">
       {song.isPlaying ? (
         <div className="flex flex-row items-center">
-          <div className="w-5 xs:w-10 mr-3">
+          <div className="w-5 xs:w-10 mr-4">
             <SpotifyIcon />
           </div>
           <div className="flex flex-col">
-            <h1 className="font-semibold text-sm md:text-normal">
+            <h1 className="text-sm text-normal">
               Now Playing:
             </h1>
-            <div className="flex flex-row gap-2 items-baseline flex-wrap">
-              {song.link && (
-                <a href={song.link} target="_blank" rel="noopener noreferrer">
-                  <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
-                    {song.title}
-                  </h2>
-                </a>
-              )}
-              {!song.link && (
+            {song.link && (
+              <a href={song.link} target="_blank" rel="noopener noreferrer">
                 <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
                   {song.title}
                 </h2>
-              )}
-              <h2 className="text-sm md:text-normal align-text-bottom">
-                by {song.artist ? song.artist : "Local File"}
+              </a>
+            )}
+            {!song.link && (
+              <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
+                {song.title}
               </h2>
-            </div>
+            )}
+            <h2 className="text-sm align-text-bottom">
+              by {song.artist ? song.artist : "Local File"}
+            </h2>
           </div>
         </div>
       ) : (

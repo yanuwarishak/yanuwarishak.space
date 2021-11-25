@@ -31,13 +31,12 @@ export default function Footer() {
       <div className="grid grid-cols-3 gap-2">
         <div className="flex flex-col gap-4">
           <InternalLink href="/" text="Home" />
-          <InternalLink href="/project" text="Projects" />
+          <InternalLink href="/project" text="Project" />
           <InternalLink href="/blog" text="Blog" />
           <InternalLink href="/tech" text="Tech" />
           <InternalLink href="/about" text="About" />
         </div>
         <div className="flex flex-col gap-4">
-          <ExternalLink href="https://twitter.com/yanuwarrr" text="Twitter" />
           <ExternalLink href="https://github.com/yanuwarishak" text="GitHub" />
           <ExternalLink
             href="https://www.linkedin.com/in/yanuwar-ishak/"
@@ -54,7 +53,10 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-4">
           <ExternalLink href="mailto:yanuwarishak@gmail.com" text="E-mail" />
-          <ExternalLink href="/resume-yanuwar-ishak.pdf" text="Resume" />
+          <ExternalLink
+            href="https://api.vercel.com/now/files/prj_LgXK4jXrS3OoUC53gxg4qA6pwQuL/ac45921331425f2efe31a2251c289934e76d771b96dd0f539ad95618156fc0f1/resume-yanuwar-Ishak.pdf"
+            text="Resume"
+          />
         </div>
       </div>
       <p className="text-gray-500 text-right">

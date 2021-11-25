@@ -6,7 +6,7 @@ import TopTracks from "@/components/spotify/TopTracks";
 function TableOfContents({ href, text, style }) {
   return (
     <Link href={`/about/#${href}`}>
-      <a className={`text-gray-400 underline hover:text-gray-200 ${style}`}>
+      <a className={`text-gray-500 underline hover:text-purple-400 ${style}`}>
         {text}
       </a>
     </Link>
@@ -44,6 +44,7 @@ export default function About() {
               layout="fill"
               objectFit="cover"
               alt="A photo of me at Kaliadem Bunker, Circa 2018"
+              priority
             />
           </div>
           <p className="text-xs text-gray-400">
