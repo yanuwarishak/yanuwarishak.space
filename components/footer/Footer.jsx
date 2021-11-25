@@ -28,7 +28,7 @@ export default function Footer() {
         <NowPlaying />
       </div>
       <h1 className="hidden">Footer</h1>
-      <div className="grid grid-cols-3 px-2">
+      <div className="grid grid-cols-3 gap-2">
         <div className="flex flex-col gap-4">
           <InternalLink href="/" text="Home" />
           <InternalLink href="/project" text="Projects" />
