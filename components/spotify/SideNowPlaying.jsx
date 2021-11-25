@@ -66,7 +66,7 @@ export default function SideNowPlaying() {
   }
 
   return (
-    <div className="bg-[#1DB954] w-48 flex flex-col justify-center items-center text-black text-center rounded-md relative">
+    <aside className="bg-[#1DB954] w-48 flex flex-col justify-center items-center text-black text-center rounded-md relative">
       {isShown ? (
         <>
           {song.isPlaying ? (
@@ -134,13 +134,13 @@ export default function SideNowPlaying() {
             <ExpandIcon />
           </div>
           <p
-            className="text-[#164d29] cursor-pointer font-semibold"
+            className="text-black cursor-pointer font-semibold"
             onClick={() => setShown(true)}
           >
             Spotify
           </p>
         </div>
       )}
-    </div>
+    </aside>
   );
 }

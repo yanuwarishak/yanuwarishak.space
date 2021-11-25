@@ -20,6 +20,10 @@ export default function Container(props) {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="index, follow" />
+        <meta
+          name="google-site-verification"
+          content="pqE_KOffJNpiwEPFTDA9C8hR4j3QMafjlS-MLZgeepg"
+        />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
@@ -34,22 +38,20 @@ export default function Container(props) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@yanuwarrr" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
-        )}
       </Head>
       <div className="flex flex-col max-w-2xl md:px-0 p-6 self-center relative mx-auto gap-10 z-10">
         <header className="mb-6">
           <Navbar />
         </header>
-        <main className="flex flex-col justify-start gap-8">
-          {children}
-        </main>
+        <main className="flex flex-col justify-start gap-8">{children}</main>
         <footer>
           <Footer />
         </footer>

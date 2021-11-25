@@ -14,7 +14,7 @@ class MyDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/favicon-32x32.png"
+            href="/favicon/favicon-32x32.png"
           />
           <link
             rel="icon"
@@ -25,7 +25,6 @@ class MyDocument extends Document {
           <link rel="manifest" href="/favicon/site.webmanifest" />
         </Head>
         <body className="bg-[#121212] text-white">
-          <h1 className="hidden">yanuwarishak.space</h1>
           <Main />
           <NextScript />
         </body>
