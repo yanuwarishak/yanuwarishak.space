@@ -1,92 +1,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000</loc>
-    <lastmod>2021-11-25T04:11:32.498Z</lastmod>
+    <loc>https://yanuwarishak.space</loc>
+    <lastmod>2021-11-25T22:21:15.289Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/404</loc>
+    <loc>https://yanuwarishak.space/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/about</loc>
+    <loc>https://yanuwarishak.space/blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/blog</loc>
+    <loc>https://yanuwarishak.space/project</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project</loc>
+    <loc>https://yanuwarishak.space/tech</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/tech</loc>
+    <loc>https://yanuwarishak.space/blog/build-vs-buy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/blog/build-vs-buy</loc>
+    <loc>https://yanuwarishak.space/blog/github-actions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/blog/github-actions</loc>
+    <loc>https://yanuwarishak.space/blog/my-discovery-of-gap-property</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/blog/my-discovery-of-gap-property</loc>
+    <loc>https://yanuwarishak.space/blog/using-markdown-in-nextjs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/blog/using-markdown-in-nextjs</loc>
+    <loc>https://yanuwarishak.space/project/cityplan-api</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/cityplan-api</loc>
+    <loc>https://yanuwarishak.space/project/crown-clothing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/crown-clothing</loc>
+    <loc>https://yanuwarishak.space/project/dev-connector</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/dev-connector</loc>
+    <loc>https://yanuwarishak.space/project/kitabatik</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/kitabatik</loc>
+    <loc>https://yanuwarishak.space/project/personal-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/personal-website</loc>
+    <loc>https://yanuwarishak.space/project/telkom-myshop</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/telkom-myshop</loc>
+    <loc>https://yanuwarishak.space/project/telkom-ticket-education</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project/telkom-ticket-education</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/project/vetsured</loc>
+    <loc>https://yanuwarishak.space/project/vetsured</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
