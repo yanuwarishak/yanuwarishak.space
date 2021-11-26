@@ -41,12 +41,12 @@ export default function BlogContainer({ slug, post, children }) {
           <div className="flex flex-row gap-2">
             <ShareButton
               title={post.title}
-              text={post.excerpt}
+              text={post.summary}
               url={`https://yanuwarishak.space/blog/${slug}`}
             />
             <TwitterShare
               title={post.title}
-              summary={post.excerpt}
+              summary={post.summary}
               url={`https://yanuwarishak.space/blog/${slug}`}
             />
           </div>

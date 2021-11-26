@@ -70,7 +70,7 @@ export default function About() {
           </a>{" "}
           or you can download my resume{" "}
           <a
-            href="/resume-yanuwar-ishak.pdf"
+            href="https://api.vercel.com/now/files/prj_LgXK4jXrS3OoUC53gxg4qA6pwQuL/ac45921331425f2efe31a2251c289934e76d771b96dd0f539ad95618156fc0f1/resume-yanuwar-Ishak.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
