@@ -144,22 +144,19 @@ export default function About() {
             </a>{" "}
             if we happen to have a similar music taste.
           </p>
+          <h3 id="this-site">About this site</h3>
+          <p>
+            This site was developed to document my personal journey. Most of
+            what's written here might be or might not be something of use for
+            you. I would be grateful if you happen to find something that helped
+            you. If you want to read more about this site such as technology
+            used, you can go{" "}
+            <Link href="/project/personal-website">
+              <a>here</a>
+            </Link>
+            , all in all thank you for the visit, see you.
+          </p>
         </div>
-      </div>
-
-      <div className="prose max-w-none text-gray-300">
-        <h3 id="this-site">About this site</h3>
-        <p>
-          This site was developed to document my personal journey. Most of
-          what's written here might be or might not be something of use for you.
-          I would be grateful if you happen to find something that helped you.
-          If you want to read more about this site such as technology used, you
-          can go{" "}
-          <Link href="/project/personal-website">
-            <a>here</a>
-          </Link>
-          , all in all thank you for the visit, see you.
-        </p>
       </div>
     </Container>
   );
