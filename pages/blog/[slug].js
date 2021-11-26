@@ -2,6 +2,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { getIndividualPost, getPostsPath } from "utils/getLocalData";
 import MDXComponents from "@/components/MDXComponents";
+import rehypeHighlight from "rehype-highlight";
 
 import BlogContainer from "@/components/container/BlogContainer";
 
@@ -23,7 +24,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const { post, content } = getIndividualPost("data/blog", slug);
-  const article = await serialize(content);
+  const article = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight],
+    },
+  });
 
   return {
     props: {

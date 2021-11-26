@@ -1,0 +1,117 @@
+---
+title: "Menggunakan Preact pada Next.js"
+publishedAt: "2021-11-26"
+summary: "Preact dan kapan kita harus menggunakannya"
+image: "/assets/images/blog/nextjs-preact/banner.jpg"
+---
+
+Kebanyakan Front-end developer pasti sudah cukup familiar dengan React.
+Berdasarkan survey yang dilakukan oleh [StackOverflow pada tahun 2020](https://insights.stackoverflow.com/survey/2020#technology-web-frameworks-all-respondents2),
+React menduduki peringkat kedua dalam hal kepopuleran.
+Akan tetapi pada banyak kasus penggunaan React untuk beberapa proyek kecil seperti landing page atau personal blog
+justru menjadi _over-engineering_ yang dapat mempengaruhi performa website tersebut.
+React sendiri sebagai sebuah library memiliki bundle size yang cukup besar.
+Hal ini merupakan sesuatu yang wajar mengingat React memilki teknologi yang kompleks seperti Virtual DOM dan event handlernya sendiri.
+Dalam development build, bundle size React dapat mencapai 2mB, dan pada production build dengan optimasi yang sesuai (tree shaking, webpack bundler, gzip)
+bundle size React dapat diturunkan hingga sekitar ~100kB.
+
+## Apa itu Preact?
+
+Preact merupakan sebuah library yang disebut sebagai _lightweight version React_.
+Bundle size dari Preact sendiri hanya sebesar 3kB.
+Hal ini dapat dicapai karena Preact hanya menggunakan API React yang banyak dipakai.
+Perbedaan antara Preact dengan React sendiri dapat dilihat secara langsung pada [docs Preact](https://preactjs.com/guide/v10/differences-to-react#main-differences).
+Perbedaan utama dari kedua library tersebut terdapat pada event handler-nya.
+React menggunakan event handler buatan mereka sendiri sedangkan Preact menggunakan event handler yang telah disediakan pada DOM.
+
+## Kapan menggunakan Preact?
+
+Penggunaan Preact harus disesuaikan dengan aplikasi yang akan dikembangkan.
+Hal ini dikarenakan beberapa fitur React yang tidak tersedia pada Preact.
+Akan tetapi, seiring berjalannya waktu Preact mulai mensupport lebih banyak fitur yang ada pada React.
+Pertimbangkan untuk menggunakan Preact ketika mengembangkan aplikasi berikut:
+
+- _Static website_.
+- _Landing Page_.
+- _Progressive Web Apps_.
+- Aplikasi dengan target user yang memiliki speed internet rendah.
+- dan aplikasi sejenisnya.
+
+## Beralih ke Preact
+
+Migrasi dari aplikasi React ke Preact sendiri bukanlah suatu hal yang sulit.
+Salah satu cara termudah untuk beralih ke Preact adalah dengan memanfaatkan fitur _aliasing_ yang ada pada Webpack.
+Dengan menggunakan _aliasing_ perubahan dapat dilakukan tanpa merubah sintaks React yang telah digunakan.
+Hal ini memungkinkan developer untuk tetap mengembangkan aplikasi dalam sintaks React dan hanya merubahnya menjadi
+Preact pada production build.
+Berikut beberapa cara melakukan _aliasing_ pada existing React project:
+
+- Aliasing pada Webpack
+
+```javascript
+//webpack.config.js
+const config = {
+  //...snip
+  resolve: {
+    alias: {
+      react: "preact/compat",
+      "react-dom/test-utils": "preact/test-utils",
+      "react-dom": "preact/compat", // Must be below test-utils
+      "react/jsx-runtime": "preact/jsx-runtime",
+    },
+  },
+};
+```
+
+- Aliasing pada Parcel
+
+```javascript
+//package.json
+{
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat",
+    "react/jsx-runtime": "preact/jsx-runtime"
+  },
+}
+```
+
+Untuk aliasing pada Rollup, Jest, dan Snowpack dapat dilihat pada [docs](https://preactjs.com/guide/v10/getting-started#aliasing-react-to-preact).
+
+## Penggunaan Preact pada Aplikasi Next.js
+
+Penggunaan Preact pada aplikasi Next.js dapat dibilang cukup mudah.
+Sebagai contoh, website ini dikembangkan menggunakan React akan tetapi menggunakan Preact sebagai production buildnya.
+Berikut cara implementasi Preact pada website ini:
+
+1. Install Preact sebagai dependency dari project
+
+```javascript
+npm i preact;
+```
+
+2. Tambahkan config berikut pada next.config.js
+
+```javascript
+// next.config.js
+module.exports = {
+  // ...config lainnya
+
+  webpack(config, { dev, isServer }) {
+    // Replace React with Preact only in client production build
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: "preact/compat",
+        "react-dom/test-utils": "preact/test-utils",
+        "react-dom": "preact/compat",
+      });
+    }
+    return config;
+  },
+};
+```
+
+Kedua langkah tersebut akan secara otomatis merubah React menjadi Preact pada hasil production build.
+Sehingga kita tetap dapat mengembangkan aplikasi menggunakan React dan tetap mendapatkan benefit
+yang dihasilkan oleh bundle size yang lebih kecil dari Preact.

@@ -1,87 +1,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yanuwarishak.space</loc>
-    <lastmod>2021-11-25T22:21:15.289Z</lastmod>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/about</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/blog</loc>
+    <lastmod>2021-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/tech</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yanuwarishak.space/blog/build-vs-buy</loc>
+    <loc>https://yanuwarishak.space/blog/2021-rewind</loc>
+    <lastmod>2021-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yanuwarishak.space/blog/github-actions</loc>
+    <loc>https://yanuwarishak.space/blog/css-gap-property</loc>
+    <lastmod>2021-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yanuwarishak.space/blog/my-discovery-of-gap-property</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://yanuwarishak.space/blog/using-markdown-in-nextjs</loc>
+    <loc>https://yanuwarishak.space/blog/menggunakan-preact-pada-nextjs</loc>
+    <lastmod>2021-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/cityplan-api</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/crown-clothing</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/dev-connector</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/kitabatik</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/personal-website</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/telkom-myshop</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/telkom-ticket-education</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanuwarishak.space/project/vetsured</loc>
+    <lastmod>2021-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

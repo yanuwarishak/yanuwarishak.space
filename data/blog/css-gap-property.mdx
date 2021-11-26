@@ -1,0 +1,56 @@
+---
+title: "My Discovery of Gap Property"
+publishedAt: "2021-11-25"
+summary: "Automatically set distances or gutters between each flex/grid items was never this easy."
+image: "/assets/images/blog/css-gap-property/banner.jpg"
+---
+
+_Read detailed instructions for gap property usage from [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)_
+
+I'm by no means is the right person you want to ask regarding CSS.
+I'll always try cutting corners to find a better way to write _less_ CSS.
+Recently I discoverd [tailwindcss](https://tailwindcss.com/), a utility-first CSS framework.
+I fall in love with tailwindcss, mostly because I don't have to write CSS by myself.
+But unexpectedly my tailwindcss discoveries led me to one powerful CSS property I never knew it existed.
+And you're right, it's the **gap** property.
+
+### Why does it such a big fuss for me
+
+If you haven't already know, I'm not a big fan of CSS.
+I hate going back and forth between files just to make my website look much better.
+I'm not a person with a good memory. I can't remember all the available css properties and the right value for it.
+That's why tailwindcss is like a revelation for me.
+I don't have to remember all of them since the tailwind auto-complete will just show me what's available and what's not.
+
+One day, on a sunny day, I scrolled down on the properties that I can access, and I stumbled upon this Gap property.
+Never seen it before, never heard about it, never used it too.
+And like most people do I googled about this property, read the docs a bit, and tried it out.
+I'm an outdated person if it's about CSS, I manually set gutters and distance of my elements all using margin and padding.
+Imagine all that elements that I have to manually set in each one of them, if you can't imagine it, it's a lot.
+
+Even though I use reusable components, it's still quite a hassle to write each of the gutters from that component.
+Gap property changed this all. I deleted all the my-4 mx-4 and then add this little magic to my Container component:
+
+```html
+<main className="flex flex-col justify-start gap-8">{children}</main>
+```
+
+That 5 characters of **gap-8** automatically made my components having a proper distance between them.
+I don't have to add first child or last child selector anymore.
+I don't have to add new margin to every new components I add to the page.
+Just one Container component and put **gap** on it,
+then the children will align themselves like an obidient child they should be.
+And just like that each pages having a consistent layout gutters.
+I'm a happy man.
+
+### So what's the cons?
+
+Don't quote me on this, but as far as I know gap property was once only applicable to grid layout.
+But at this moment, gap property is already supported on both grid and flex layout.
+However, for some older browsers this property might not be supported.
+You can check whether you can use this gap property in this [can i use website](https://caniuse.com/?search=gap).
+
+So, that's pretty much my discovery and my first impression of gap property.
+The takeaways is I need to learn more about CSS.
+If you have never tried to use gap property before, then give it a shot.
+See you then.
