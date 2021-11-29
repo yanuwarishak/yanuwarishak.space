@@ -1,4 +1,5 @@
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+import MenuButton from "@/components/MenuButton";
 import "styles/global.css";
 
 function MyApp({ Component, pageProps }) {
@@ -9,7 +10,10 @@ function MyApp({ Component, pageProps }) {
           <SideNowPlaying />
         </div>
       </div>
-      <Component {...pageProps} />
+      <div className="mb-14 xs:mb-0">
+        <Component {...pageProps} />
+      </div>
+      <MenuButton />
     </>
   );
 }

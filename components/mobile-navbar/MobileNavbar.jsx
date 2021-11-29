@@ -82,7 +82,7 @@ export default function MobileNavbar() {
   }, []);
 
   return (
-    <div className="flex flex-row justify-end w-full md:hidden">
+    <div className="hidden flex-row justify-end w-full xs:flex sm:hidden">
       <button
         className="cursor-pointer"
         aria-label="Toggle Menu"

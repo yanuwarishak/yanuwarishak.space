@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className="flex flex-col justify-center">
       <div className="flex items-center justify-end w-full relative border-gray-700 bg-opacity-60 text-gray-400">
         <MobileNavbar />
-        <ul className="hidden md:flex text-center w-min" id="menu">
+        <ul className="hidden sm:flex text-center w-min" id="menu">
           <NavItem href="/" text="Home" />
           <NavItem href="/project" text="Project" />
           <NavItem href="/blog" text="Blog" />
