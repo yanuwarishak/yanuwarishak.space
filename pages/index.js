@@ -38,9 +38,9 @@ export default function Home({ recentPosts, recentProjects }) {
         </div>
         <div className="flex flex-col gap-2 text-center md:text-left md:w-3/4">
           <h1 className="text-4xl font-bold">Yanuwar Ishak</h1>
-          <h1 className="text-7xl absolute -left-28 top-28 font-bold text-[#202020] w-8 flex-wrap hidden md:flex cursor-default neon-text leading-[1.1]">
+          {/* <h1 className="text-7xl absolute -left-28 top-28 font-bold text-[#202020] w-8 flex-wrap hidden md:flex cursor-default neon-text leading-[1.1]">
             ヤヌワル イシャク
-          </h1>
+          </h1> */}
           <h2 className="text-xl text-purple-400 font-semibold">
             Front-end Developer
           </h2>
