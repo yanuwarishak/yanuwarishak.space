@@ -49,10 +49,7 @@ export default function MainLayout(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <div className="bg-[#242424] w-full p-2 mx-auto text-center">
-        <p>Latest Update: Blog Post - If I Could Turn Back Time - 2021</p>
-      </div>
-      <div className="flex flex-col self-center relative mx-auto md:grid md:grid-cols-layout p-6 gap-6">
+      <div className="flex flex-col self-center relative mx-auto md:grid md:grid-cols-layout p-6 gap-4">
         {/* Left Container */}
         <aside className="relative hidden md:flex md:flex-col w-full items-end">
           <div className="sticky top-6 w-full 2lg:w-48 flex flex-col items-end">

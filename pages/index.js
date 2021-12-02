@@ -28,6 +28,7 @@ import {
   ReactIcon,
   NextjsIcon,
   NodeIcon,
+  SocialIcons,
 } from "@/components/icons";
 
 export default function Home({ recentPosts, recentProjects }) {
@@ -42,9 +43,41 @@ export default function Home({ recentPosts, recentProjects }) {
       <div className="absolute top-0 left-0">
         <h1 className="p-6 font-semibold text-lg md:hidden">Home</h1>
       </div>
+      {/* Site Update Section */}
+      <div className="hidden md:flex flex-col p-4 bg-gradient-to-l from-gray-900 to-gray-800 rounded-md gap-2 cursor-default">
+        <div className="flex justify-between">
+          <p className="text-2xl font-semibold text-gray-400">
+            Latest site update
+          </p>
+          <p className="text-gray-500">Dec 2021</p>
+        </div>
+        <ul className="list-disc px-4">
+          <li className="text-gray-300">
+            Added aside content on desktop view.
+          </li>
+          <li className="text-gray-300">
+            Added views and clap functionality on blog posts.
+          </li>
+          <li className="text-gray-300 hover:text-purple-400 underline">
+            <Link href="/blog/2021-rewind">
+              <a>Blog post: If I could turn back time - 2021 &rarr;</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
       {/* Intro Section */}
-      <section className="flex flex-col md:flex-row justify-between gap-2">
-        <div className="w-1/4 self-center flex flex-row justify-center">
+      <section className="flex flex-col md:flex-row justify-between items-start gap-2">
+        <div className="flex flex-col gap-2 text-center md:text-left md:w-3/4">
+          <h1 className="text-4xl font-bold">Yanuwar Ishak</h1>
+          <h2 className="text-xl text-purple-400 font-semibold">
+            Front-end Developer
+          </h2>
+          <h2 className="text-gray-400 text-lg mb-2">
+            Software engineer in learning mainly focused on Web Development.
+          </h2>
+          <SocialIcons />
+        </div>
+        <div>
           <Image
             className="rounded-full my-auto"
             src="/assets/images/avatar.png"
@@ -53,15 +86,6 @@ export default function Home({ recentPosts, recentProjects }) {
             alt="Yanuwar Ishak Avatar"
             priority
           />
-        </div>
-        <div className="flex flex-col gap-2 text-center md:text-left md:w-3/4">
-          <h1 className="text-4xl font-bold">Yanuwar Ishak</h1>
-          <h2 className="text-xl text-purple-400 font-semibold">
-            Front-end Developer
-          </h2>
-          <h2 className="text-gray-400 text-lg">
-            Software engineer in learning mainly focused on Web Development.
-          </h2>
         </div>
       </section>
       {/* Recent Posts Section */}
