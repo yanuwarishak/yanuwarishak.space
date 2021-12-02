@@ -67,8 +67,8 @@ export default function MainLayout(props) {
         </main>
         {/* Right Container */}
         <aside className="relative hidden md:flex md:flex-col w-full">
-          <div className="sticky top-6 w-full 2lg:w-56 flex flex-col gap-4">
-            <RightContent />
+          <div className="sticky top-6 w-full 2lg:w-64 flex flex-col gap-4">
+            <RightContent /> 
           </div>
         </aside>
       </div>

@@ -30,7 +30,7 @@ const useIntersectionObserver = (setActiveId) => {
     };
 
     const observer = new IntersectionObserver(callback, {
-      rootMargin: "-150px 0px -30% 0px",
+      rootMargin: "-128px 0px -30% 0px",
     });
 
     headingElements.forEach((element) => observer.observe(element));

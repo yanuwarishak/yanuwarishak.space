@@ -51,7 +51,7 @@ export default function Project({ projects }) {
             </p>
             <h1 className="text-5xl font-bold">Project </h1>
           </span>
-          <p className="mt-2 text-gray-500 leading-relaxed">
+          <p className="mt-2 text-gray-400 leading-relaxed">
             Apart from being a Front-end Developer, I've done several works that
             put me in various roles (Graphic designer, video editor, Android
             Developer).
@@ -80,7 +80,7 @@ export default function Project({ projects }) {
           </p>
         </div>
       </div>
-
+      {/* Project Filter */}
       <div className="flex flex-col md:flex-row">
         <p className="text-gray-200">Filter by:</p>
         <div className="mt-2 md:mt-0 md:ml-2 flex flex-row flex-wrap gap-2">
@@ -101,6 +101,7 @@ export default function Project({ projects }) {
           })}
         </div>
       </div>
+      {/* Project List */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {filteredProjects.map((project, idx) => {
           return <ProjectList project={project} key={idx} />;

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-// import Container from "@/components/container/Container";
 import MainLayout from "layout/MainLayout";
 import TopTracks from "@/components/spotify/TopTracks";
 import { SpotifyWrapper } from "hooks/context/state";
@@ -10,7 +9,7 @@ import ContentNav from "@/components/ContentNav";
 function TableOfContents({ href, text, style }) {
   return (
     <Link href={`/about/#${href}`}>
-      <a className={`text-gray-500 underline hover:text-purple-400 ${style}`}>
+      <a className={`text-gray-400 underline hover:text-purple-400 ${style}`}>
         {text}
       </a>
     </Link>
@@ -27,7 +26,7 @@ function rightContent() {
       <SpotifyWrapper>
         <SideNowPlaying />
       </SpotifyWrapper>
-      <ContentNav />
+      <ContentNav slug="/about" />
     </>
   );
 }
@@ -150,9 +149,9 @@ export default function About() {
       {/* Spotify Section */}
       <div className="flex flex-col gap-1">
         <div className="bg-[#1DB954] p-4 text-black">
-          <h2 className="text-2xl font-semibold" id="monthly-tracks">
+          <p className="text-2xl font-semibold" id="monthly-tracks">
             My Spotify Monthly Top Tracks
-          </h2>
+          </p>
           <p>Music I've listened to recently</p>
         </div>
         <TopTracks />

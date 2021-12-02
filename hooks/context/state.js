@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const SpotifyContext = createContext();
 
 export function SpotifyWrapper({ children }) {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   return (
     <SpotifyContext.Provider value={{ isOpen, setOpen }}>

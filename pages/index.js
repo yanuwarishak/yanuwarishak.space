@@ -1,13 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts, getAllProjects } from "utils/getLocalData";
+import { getAllProjects } from "utils/getLocalData";
 
-import PostList from "@/components/post-list/PostList";
+import FeaturedPost from "@/components/FeaturedPost";
 import ProjectList from "@/components/project-list/ProjectList";
 
 import MainLayout from "layout/MainLayout";
 import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+
+import {
+  JavascriptIcon,
+  ReactIcon,
+  NextjsIcon,
+  NodeIcon,
+  SocialIcons,
+} from "@/components/icons";
 
 function leftContent() {
   return null;
@@ -23,13 +31,28 @@ function rightContent() {
   );
 }
 
-import {
-  JavascriptIcon,
-  ReactIcon,
-  NextjsIcon,
-  NodeIcon,
-  SocialIcons,
-} from "@/components/icons";
+const featuredPost = [
+  {
+    title: "If I Could Turn Back Time - 2021",
+    slug: "2021-rewind",
+    excerpt:
+      "A lot of things happened in my life this year, and here is what I wish I learned earlier or done earlier in 2021",
+    publishedAt: "2021-11-26",
+  },
+  {
+    title: "Menggunakan Preact pada Next.js",
+    slug: "preact-nextjs",
+    excerpt: "Apa itu Preact dan kapan waktu yang tepat untuk menggunakannya.",
+    publishedAt: "2021-11-26",
+  },
+  {
+    title: "My Discovery of Gap Property",
+    slug: "css-gap-property",
+    excerpt:
+      "Automatically set distances or gutters between each flex/grid items was never this easy.",
+    publishedAt: "2021-11-25",
+  },
+];
 
 export default function Home({ recentPosts, recentProjects }) {
   const stacks = [
@@ -46,19 +69,19 @@ export default function Home({ recentPosts, recentProjects }) {
       {/* Site Update Section */}
       <div className="hidden md:flex flex-col p-4 bg-gradient-to-l from-gray-900 to-gray-800 rounded-md gap-2 cursor-default">
         <div className="flex justify-between">
-          <p className="text-2xl font-semibold text-gray-400">
+          <p className="text-2xl font-semibold text-gray-200">
             Latest site update
           </p>
           <p className="text-gray-500">Dec 2021</p>
         </div>
         <ul className="list-disc px-4">
-          <li className="text-gray-300">
-            Added aside content on desktop view.
+          <li className="text-gray-400">
+            Added aside navigation and content on desktop view.
           </li>
-          <li className="text-gray-300">
-            Added views and clap functionality on blog posts.
+          <li className="text-gray-400">
+            Website redesign with new layout.
           </li>
-          <li className="text-gray-300 hover:text-purple-400 underline">
+          <li className="text-gray-400 hover:text-gray-200 underline w-max">
             <Link href="/blog/2021-rewind">
               <a>Blog post: If I could turn back time - 2021 &rarr;</a>
             </Link>
@@ -75,9 +98,8 @@ export default function Home({ recentPosts, recentProjects }) {
           <h2 className="text-gray-400 text-lg mb-2">
             Software engineer in learning mainly focused on Web Development.
           </h2>
-          <SocialIcons />
         </div>
-        <div>
+        <div className="flex flex-col items-center gap-4">
           <Image
             className="rounded-full my-auto"
             src="/assets/images/avatar.png"
@@ -86,22 +108,25 @@ export default function Home({ recentPosts, recentProjects }) {
             alt="Yanuwar Ishak Avatar"
             priority
           />
+          <SocialIcons />
         </div>
       </section>
       {/* Recent Posts Section */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
-          <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
-          <h1 className="text-3xl font-semibold ml-0 md:ml-2">
+          <h1 className="text-3xl font-semibold mr-0 md:mr-2">
             Featured&nbsp;Posts
           </h1>
+          <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
         <div className="flex flex-col gap-2">
-          {recentPosts &&
-            recentPosts.map((post, idx) => <PostList posts={post} key={idx} />)}
+          {featuredPost &&
+            featuredPost.map((post, idx) => (
+              <FeaturedPost post={post} key={idx} />
+            ))}
         </div>
         <Link href="/blog">
-          <a className="text-purple-400 w-max hover:text-purple-500 underline flex justify-end md:justify-start ease-in-out duration-300">
+          <a className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end">
             See all posts &#8594;
           </a>
         </Link>
@@ -109,10 +134,10 @@ export default function Home({ recentPosts, recentProjects }) {
       {/* Recent Projects Section */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
-          <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
-          <h1 className="text-3xl font-semibold ml-0 md:ml-2">
+          <h1 className="text-3xl font-semibold mr-0 md:mr-2">
             Recent&nbsp;Projects
           </h1>
+          <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {recentProjects &&
@@ -121,7 +146,7 @@ export default function Home({ recentPosts, recentProjects }) {
             ))}
         </div>
         <Link href="/project">
-          <a className="text-purple-400 w-max hover:text-purple-500 underline flex justify-end md:justify-start ease-in-out duration-300">
+          <a className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end">
             See all projects &#8594;
           </a>
         </Link>
@@ -129,10 +154,10 @@ export default function Home({ recentPosts, recentProjects }) {
       {/* Tech Stack Section */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
-          <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
-          <h1 className="text-3xl font-semibold ml-0 md:ml-2">
+          <h1 className="text-3xl font-semibold mr-0 md:mr-2">
             My&nbsp;Tech&nbsp;Stacks
           </h1>
+          <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
         <div className="grid grid-cols-4 gap-3 items-center text-center">
           {stacks.map((stack, idx) => (
@@ -145,7 +170,7 @@ export default function Home({ recentPosts, recentProjects }) {
           ))}
         </div>
         <Link href="/tech">
-          <a className=" text-purple-400 w-max hover:text-purple-500 underline flex justify-end md:justify-start ease-in-out duration-300">
+          <a className=" text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end">
             See complete list &#8594;
           </a>
         </Link>
@@ -155,13 +180,10 @@ export default function Home({ recentPosts, recentProjects }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts("data/blog");
   const projects = getAllProjects("data/project");
-  const recentPosts = posts.slice(0, 3);
   const recentProjects = projects.slice(0, 4);
   return {
     props: {
-      recentPosts,
       recentProjects,
     },
   };

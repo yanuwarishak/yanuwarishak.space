@@ -21,7 +21,7 @@ html {
 }
 
 h2, h3 {
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 8rem;
 }
 
 ::-webkit-scrollbar {

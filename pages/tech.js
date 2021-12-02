@@ -1,4 +1,3 @@
-// import Container from "@/components/container/Container";
 import MainLayout from "layout/MainLayout";
 import Image from "next/image";
 import { SpotifyWrapper } from "hooks/context/state";
@@ -40,7 +39,7 @@ export default function Tech() {
             <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ テク</p>
             <h1 className="text-5xl font-bold">Tech </h1>
           </span>
-          <p className="mt-2 text-gray-500 leading-relaxed">
+          <p className="mt-2 text-gray-400 leading-relaxed">
             Here I listed all the technologies that I currently use and familiar
             with as well as some that I've planned to learn.
           </p>

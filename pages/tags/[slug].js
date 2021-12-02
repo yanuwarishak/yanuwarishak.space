@@ -1,15 +1,15 @@
-import Container from "@/components/container/Container";
+import MainLayout from "layout/MainLayout";
 
-import { getPostsByTag, getAllTags } from "@/lib/api";
+// import { getPostsByTag, getAllTags } from "@/lib/api";
 
 export default function Tag({ allPosts, tag }) {
   return (
-    <Container>
+    <MainLayout leftContent={() => null} rightContent={() => null}>
       <h2 className="mb-8 text-6xl md:text-7xl font-heading font-bold tracking-tighter leading-tight">
         🏷️ #{tag}
       </h2>
 
-      {allPosts.length > 0 && (
+      {/* {allPosts.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-5 md:gap-y-8 mb-16">
           {allPosts.map((post) => (
             <PostCard
@@ -25,33 +25,33 @@ export default function Tag({ allPosts, tag }) {
             />
           ))}
         </div>
-      )}
-    </Container>
+      )} */}
+    </MainLayout>
   );
 }
 
-export async function getStaticProps({ params }) {
-  const allPosts = await getPostsByTag(params.tag, "id");
-  return {
-    props: {
-      allPosts,
-      tag: params.tag,
-    },
-    revalidate: 3,
-  };
-}
+// export async function getStaticProps({ params }) {
+//   const allPosts = await getPostsByTag(params.tag, "id");
+//   return {
+//     props: {
+//       allPosts,
+//       tag: params.tag,
+//     },
+//     revalidate: 3,
+//   };
+// }
 
-export async function getStaticPaths() {
-  const tags = await getAllTags("id");
+// export async function getStaticPaths() {
+//   const tags = await getAllTags("id");
 
-  return {
-    paths: tags.map((tag) => {
-      return {
-        params: {
-          tag: tag,
-        },
-      };
-    }),
-    fallback: false,
-  };
-}
+//   return {
+//     paths: tags.map((tag) => {
+//       return {
+//         params: {
+//           tag: tag,
+//         },
+//       };
+//     }),
+//     fallback: false,
+//   };
+// }

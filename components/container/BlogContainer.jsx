@@ -1,26 +1,46 @@
 import Image from "next/image";
 import { parseISO, format } from "date-fns";
-import Container from "./Container";
+
+import MainLayout from "layout/MainLayout";
+import ContentNav from "../ContentNav";
 import EditPost from "../edit-post/EditPost";
 import { ShareButton, TwitterShare } from "../share-button/ShareButton";
 
 const editUrl = (slug) =>
   `https://github.com/yanuwarishak/yanuwarishak.space/edit/main/data/blog/${slug}.mdx`;
 
+function leftContent() {
+  return null;
+}
+
 export default function BlogContainer({ slug, post, children }) {
   return (
-    <Container
+    <MainLayout
       title={`${post.title} – Yanuwar Ishak`}
       description={post.summary}
       image={`https://yanuwarishak.space${post.image}`}
       date={new Date(post.publishedAt).toISOString()}
       type="article"
+      LeftContent={leftContent}
+      RightContent={() => {
+        return <ContentNav slug={`/blog/${slug}`} />;
+      }}
     >
       <div className="w-full flex flex-col items-start justify-center gap-6">
-        <h1 className=" text-3xl md:leading-tight md:text-5xl font-bold">
-          {post.title}
-        </h1>
+        {/* Post Thumbnail */}
+        <div className="relative w-full h-80">
+          <Image
+            className="rounded-lg"
+            alt={post.title}
+            src={post.image}
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
+        {/* Post Information */}
         <div className="flex flex-row w-full items-center justify-between">
+          {/* Written by */}
           <div className="flex flex-row gap-3">
             <div className="my-auto h-6">
               <Image
@@ -38,6 +58,7 @@ export default function BlogContainer({ slug, post, children }) {
               </span>
             </p>
           </div>
+          {/* Share Btns */}
           <div className="flex flex-row gap-2">
             <ShareButton
               title={post.title}
@@ -51,21 +72,17 @@ export default function BlogContainer({ slug, post, children }) {
             />
           </div>
         </div>
-        <div className="relative w-full h-80">
-          <Image
-            className="rounded-lg"
-            alt={post.title}
-            src={post.image}
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        </div>
+        {/* Post Title */}
+        <h1 className=" text-3xl md:leading-tight md:text-5xl font-bold">
+          {post.title}
+        </h1>
+        {/* Post Content */}
         <section className="prose w-full max-w-none">{children}</section>
+        {/* Post Edit Button */}
         <div className="flex flex-row justify-end w-full -mb-4">
           <EditPost url={editUrl(slug)} />
         </div>
       </div>
-    </Container>
+    </MainLayout>
   );
 }

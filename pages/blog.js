@@ -36,7 +36,7 @@ export default function Blog({ posts }) {
             <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ ブログ</p>
             <h1 className="text-5xl font-bold">Blog </h1>
           </span>
-          <p className="mt-2 text-gray-500 leading-relaxed">
+          <p className="mt-2 text-gray-400 leading-relaxed">
             Some article I wrote over the course of my developer journey.
           </p>
         </div>
