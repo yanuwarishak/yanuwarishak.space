@@ -20,8 +20,21 @@ html {
   scroll-behavior: smooth;
 }
 
+h2, h3 {
+  scroll-margin-top: 1rem;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -41,6 +54,12 @@ html {
   text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 38px #7508a8, 0 0 73px #7508a8,
     0 0 94px #7508a8, 0 0 140px #7508a8;
 }
+
+/* .grid-cols-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(0px, 672px) 1fr;
+  grid-column-gap: 8px;
+} */
 
 .prose pre {
   @apply border border-gray-700 bg-gray-900;

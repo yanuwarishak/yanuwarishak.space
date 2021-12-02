@@ -1,8 +1,27 @@
 import { useState } from "react";
+import Image from "next/image";
+
 import { getAllProjects } from "utils/getLocalData";
 
 import ProjectList from "@/components/project-list/ProjectList";
-import Container from "@/components/container/Container";
+
+import MainLayout from "layout/MainLayout";
+import { SpotifyWrapper } from "hooks/context/state";
+import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+
+function leftContent() {
+  return null;
+}
+
+function rightContent() {
+  return (
+    <>
+      <SpotifyWrapper>
+        <SideNowPlaying />
+      </SpotifyWrapper>
+    </>
+  );
+}
 
 export default function Project({ projects }) {
   const categories = [
@@ -18,19 +37,50 @@ export default function Project({ projects }) {
   );
 
   return (
-    <Container title="Project – Yanuwar Ishak">
-      <div className="relative">
-        <h1 className="text-5xl font-bold z-1">Project</h1>
-        <p className="text-6xl sm:text-7xl font-bold text-[#202020] absolute -top-8 -left-6 z-[-1] cursor-default ">
-          プロジェクト
-        </p>
+    <MainLayout
+      title="Project – Yanuwar Ishak"
+      LeftContent={leftContent}
+      RightContent={rightContent}
+    >
+      {/* Page Header */}
+      <div className="w-full flex flex-col md:flex-row justify-between md:items-start gap-6">
+        <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
+          <span className="flex flex-col">
+            <p className="text-xl font-bold text-[#3f3f3f] ml-2">
+              / プロジェクト
+            </p>
+            <h1 className="text-5xl font-bold">Project </h1>
+          </span>
+          <p className="mt-2 text-gray-500 leading-relaxed">
+            Apart from being a Front-end Developer, I've done several works that
+            put me in various roles (Graphic designer, video editor, Android
+            Developer).
+          </p>
+        </div>
+        <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
+          <div className="h-48 w-full relative">
+            <Image
+              src="/assets/images/code-vscode.jpg"
+              layout="fill"
+              objectFit="cover"
+              alt="Writing code on VS Code"
+              priority
+            />
+          </div>
+          <p className="text-xs text-gray-400">
+            Photo by Ferenc Almasi on{" "}
+            <a
+              href="https://unsplash.com/photos/eYpcLDXHVb0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Unsplash
+            </a>
+          </p>
+        </div>
       </div>
-      <p className="text-gray-400 leading-relaxed">
-        Apart from being a Front-end Developer, I've done several works that put
-        me in various roles. There was a period of time where I mostly worked as
-        a graphic designer and a video editor. I've also done a project as an
-        Android Developer.
-      </p>
+
       <div className="flex flex-col md:flex-row">
         <p className="text-gray-200">Filter by:</p>
         <div className="mt-2 md:mt-0 md:ml-2 flex flex-row flex-wrap gap-2">
@@ -49,7 +99,6 @@ export default function Project({ projects }) {
               </p>
             );
           })}
-
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -61,7 +110,7 @@ export default function Project({ projects }) {
             return <ProjectList project={project} key={idx} />;
           })}
       </div>
-    </Container>
+    </MainLayout>
   );
 }
 

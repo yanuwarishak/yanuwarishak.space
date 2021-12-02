@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import SideNowPlaying from "../spotify/SideNowPlaying";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import AsideNavbar from "./AsideNavbar";
 
-export default function Container(props) {
-  const { children, ...customMeta } = props;
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+
+export default function MainLayout(props) {
+  const { LeftContent, RightContent, children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: "Yanuwar Ishak – Front-end Developer.",
@@ -48,14 +49,31 @@ export default function Container(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <div className="flex flex-col max-w-2xl md:px-0 p-6 self-center relative mx-auto gap-10 z-10">
-        <header className="mb-6">
-          <Navbar />
-        </header>
-        <main className="flex flex-col justify-start gap-8">{children}</main>
-        <footer>
+      <div className="bg-[#242424] w-full p-2 mx-auto text-center">
+        <p>Latest Update: Blog Post - If I Could Turn Back Time - 2021</p>
+      </div>
+      <div className="flex flex-col self-center relative mx-auto md:grid md:grid-cols-layout p-6 gap-6">
+        {/* Left Container */}
+        <aside className="relative hidden md:flex md:flex-col w-full items-end">
+          <div className="sticky top-6 w-full 2lg:w-48 flex flex-col items-end">
+            <AsideNavbar />
+            <LeftContent />
+          </div>
+        </aside>
+        {/* Main Content */}
+        <main className="flex flex-col justify-start gap-8">
+          <header className="block md:hidden">
+            <Navbar />
+          </header>
+          {children}
           <Footer />
-        </footer>
+        </main>
+        {/* Right Container */}
+        <aside className="relative hidden md:flex md:flex-col w-full">
+          <div className="sticky top-6 w-full 2lg:w-56 flex flex-col gap-4">
+            <RightContent />
+          </div>
+        </aside>
       </div>
     </>
   );

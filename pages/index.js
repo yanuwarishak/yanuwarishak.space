@@ -4,7 +4,25 @@ import { getAllPosts, getAllProjects } from "utils/getLocalData";
 
 import PostList from "@/components/post-list/PostList";
 import ProjectList from "@/components/project-list/ProjectList";
-import Container from "@/components/container/Container";
+
+import MainLayout from "layout/MainLayout";
+import { SpotifyWrapper } from "hooks/context/state";
+import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+
+function leftContent() {
+  return null;
+}
+
+function rightContent() {
+  return (
+    <>
+      <SpotifyWrapper>
+        <SideNowPlaying />
+      </SpotifyWrapper>
+    </>
+  );
+}
+
 import {
   JavascriptIcon,
   ReactIcon,
@@ -20,7 +38,7 @@ export default function Home({ recentPosts, recentProjects }) {
     <NodeIcon />,
   ];
   return (
-    <Container>
+    <MainLayout LeftContent={leftContent} RightContent={rightContent}>
       <div className="absolute top-0 left-0">
         <h1 className="p-6 font-semibold text-lg md:hidden">Home</h1>
       </div>
@@ -38,9 +56,6 @@ export default function Home({ recentPosts, recentProjects }) {
         </div>
         <div className="flex flex-col gap-2 text-center md:text-left md:w-3/4">
           <h1 className="text-4xl font-bold">Yanuwar Ishak</h1>
-          {/* <h1 className="text-7xl absolute -left-28 top-28 font-bold text-[#202020] w-8 flex-wrap hidden md:flex cursor-default neon-text leading-[1.1]">
-            ヤヌワル イシャク
-          </h1> */}
           <h2 className="text-xl text-purple-400 font-semibold">
             Front-end Developer
           </h2>
@@ -54,7 +69,7 @@ export default function Home({ recentPosts, recentProjects }) {
         <div className="flex flex-row w-full items-center">
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
           <h1 className="text-3xl font-semibold ml-0 md:ml-2">
-            Recent&nbsp;Posts
+            Featured&nbsp;Posts
           </h1>
         </div>
         <div className="flex flex-col gap-2">
@@ -111,7 +126,7 @@ export default function Home({ recentPosts, recentProjects }) {
           </a>
         </Link>
       </section>
-    </Container>
+    </MainLayout>
   );
 }
 

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useSpotifyContext } from "hooks/context/state";
 import { SpotifyIcon, ExpandIcon } from "../icons";
 import useSWR from "swr";
 
 export default function SideNowPlaying() {
-  const [isShown, setShown] = useState(true);
+  const { isOpen, setOpen } = useSpotifyContext();
+
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/spotify/now-playing", fetcher, {
     revalidateOnFocus: true,
@@ -29,8 +30,8 @@ export default function SideNowPlaying() {
   }
 
   return (
-    <aside className="bg-[#1DB954] w-48 flex flex-col justify-center items-center text-black text-center rounded-md relative">
-      {isShown ? (
+    <div className="bg-[#1DB954] w-full flex flex-col justify-center items-center text-black text-center rounded-md relative">
+      {isOpen ? (
         <>
           {song.isPlaying ? (
             <div className="cursor-default justify-center items-center flex flex-col p-2">
@@ -82,28 +83,23 @@ export default function SideNowPlaying() {
             <hr className="border-1 border-[#19a149] w-full hidden md:block" />
             <div
               className="w-4 h-4 cursor-pointer my-2"
-              onClick={() => setShown(false)}
+              onClick={() => setOpen(!isOpen)}
             >
               <ExpandIcon />
             </div>
           </div>
         </>
       ) : (
-        <div className="flex flex-row justify-center items-center gap-1 py-2">
-          <div
-            className="w-4 h-4 rotate-180 cursor-pointer"
-            onClick={() => setShown(true)}
-          >
+        <div
+          className="flex flex-row justify-center items-center gap-1 py-2"
+          onClick={() => setOpen(!isOpen)}
+        >
+          <div className="w-4 h-4 rotate-180 cursor-pointer">
             <ExpandIcon />
           </div>
-          <p
-            className="text-black cursor-pointer font-semibold"
-            onClick={() => setShown(true)}
-          >
-            Spotify
-          </p>
+          <p className="text-black cursor-pointer font-semibold">Spotify</p>
         </div>
       )}
-    </aside>
+    </div>
   );
 }

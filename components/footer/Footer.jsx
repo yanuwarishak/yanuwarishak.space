@@ -8,14 +8,14 @@ const ExternalLink = ({ href, text }) => (
     rel="noopener noreferrer"
     href={href}
   >
-    <h2>{text}</h2>
+    <p>{text}</p>
   </a>
 );
 
 const InternalLink = ({ href, text }) => (
   <Link href={href}>
     <a className="text-gray-500 hover:text-gray-400 transition">
-      <h2>{text}</h2>
+      <p>{text}</p>
     </a>
   </Link>
 );
