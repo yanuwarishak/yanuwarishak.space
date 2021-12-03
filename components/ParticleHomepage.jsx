@@ -1,23 +1,15 @@
 import Particles from "react-tsparticles";
 
 export default function ParticleHomepage() {
-  const particlesInit = (main) => {
-    console.log(main);
-  };
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
   return (
     <Particles
-      className="relative w-full h-56 first:absolute"
+      className="relative w-full h-56 first:absolute hidden md:block"
       canvasClassName="canvas-wrapper"
       id="hero-particle"
-      init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         background: {
           color: {
-            value: "#121212",
+            value: "transparent",
           },
         },
         fpsLimit: 60,
@@ -44,7 +36,7 @@ export default function ParticleHomepage() {
             value: "#ffffff",
           },
           links: {
-            color: "#ecaeff",
+            color: "#A78BFA",
             distance: 100,
             enable: true,
             opacity: 0.75,
@@ -55,7 +47,7 @@ export default function ParticleHomepage() {
             direction: "none",
             outMode: "out",
             random: true,
-            speed: 1,
+            speed: 0.5,
             straight: false,
           },
           number: {
@@ -63,7 +55,7 @@ export default function ParticleHomepage() {
               enable: true,
               value_area: 400,
             },
-            value: 200,
+            value: 100,
           },
           opacity: {
             value: 0.5,
@@ -73,7 +65,7 @@ export default function ParticleHomepage() {
           },
           size: {
             random: true,
-            value: 5,
+            value: 4,
           },
         },
         detectRetina: true,
