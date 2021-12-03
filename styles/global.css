@@ -20,8 +20,17 @@ html {
   scroll-behavior: smooth;
 }
 
-h2, h3 {
+h2,
+h3 {
   scroll-margin-top: 8rem;
+}
+
+.canvas-wrapper {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 ::-webkit-scrollbar {

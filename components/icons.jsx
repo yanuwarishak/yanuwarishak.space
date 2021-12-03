@@ -5,6 +5,7 @@ export function SocialIcons() {
         href="https://www.linkedin.com/in/yanuwar-ishak/"
         target="_blank"
         rel="noopener noreferrer"
+        title="Go to LinkedIn Profile"
       >
         <svg
           className="text-gray-300 hover:text-purple-400"
@@ -28,6 +29,7 @@ export function SocialIcons() {
         href="https://github.com/yanuwarishak"
         target="_blank"
         rel="noopener noreferrer"
+        title="Go to Github Profile"
       >
         <svg
           className="text-gray-300 hover:text-purple-400"
@@ -47,7 +49,11 @@ export function SocialIcons() {
           ></path>
         </svg>
       </a>
-      <a href="mailto:yanuwarishak@gmail.com" target="_blank">
+      <a
+        href="mailto:yanuwarishak@gmail.com"
+        target="_blank"
+        title="Send an E-mail to Yanuwar Ishak"
+      >
         <svg
           className="text-gray-300 hover:text-purple-400"
           width="22px"
@@ -153,7 +159,7 @@ export function ExpandIcon() {
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M32 0C14.3552 0 0 14.3552 0 32C0 49.6448 14.3552 64 32 64C49.6448 64 64 49.6448 64 32C64 14.3552 49.6448 0 32 0ZM49.5721 39.8751C49.0042 40.4432 48.2597 40.7273 47.5152 40.7273C46.7706 40.7273 46.0261 40.4433 45.4582 39.8751L31.9996 26.4171L18.5418 39.8751C17.4059 41.0112 15.5638 41.0112 14.4277 39.8751C13.2916 38.7392 13.2916 36.8972 14.4277 35.7611L29.9425 20.2459C30.488 19.7004 31.2279 19.3937 31.9994 19.3937C32.7711 19.3937 33.5108 19.7002 34.0565 20.2459L49.5721 35.7611C50.7084 36.8972 50.7084 38.7392 49.5721 39.8751Z"
-        fill="black"
+        fill="currentColor"
       />
     </svg>
   );

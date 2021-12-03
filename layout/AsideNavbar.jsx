@@ -32,7 +32,6 @@ export default function AsideNavbar() {
         <NavItem href="/blog" text="🧾 Blog" />
         <NavItem href="/tech" text="⚙ Tech" />
         <NavItem href="/about" text="🧑 About" />
-        <NavItem href="/experimental" text="⚡ Exp" />
       </ul>
     </nav>
   );
