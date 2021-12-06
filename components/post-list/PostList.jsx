@@ -1,9 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function PostList({ posts: { frontmatter: post, slug } }) {
   return (
-    <div className="flex flex-col p-4 border-purple-200 border hover:border-purple-400 hover:bg-[#141414] rounded-lg h-auto">
+    <div className="flex flex-col p-4 rounded-lg h-auto bg-[#242424]">
       <Link href={`/blog/${slug}`}>
         <a className="flex flex-col justify-start cursor-pointer">
           <div className="flex flex-row justify-between">

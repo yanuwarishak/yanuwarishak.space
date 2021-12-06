@@ -3,19 +3,19 @@ import NowPlaying from "@/components/spotify/NowPlaying";
 
 const ExternalLink = ({ href, text }) => (
   <a
-    className="text-gray-500 hover:text-gray-400 transition"
+    className="text-gray-400 hover:text-gray-300 transition"
     target="_blank"
     rel="noopener noreferrer"
     href={href}
   >
-    <h2>{text}</h2>
+    <p>{text}</p>
   </a>
 );
 
 const InternalLink = ({ href, text }) => (
   <Link href={href}>
-    <a className="text-gray-500 hover:text-gray-400 transition">
-      <h2>{text}</h2>
+    <a className="text-gray-400 hover:text-gray-300 transition">
+      <p>{text}</p>
     </a>
   </Link>
 );
@@ -24,7 +24,7 @@ export default function Footer() {
   return (
     <div className="flex flex-col w-full gap-6">
       <hr className="w-full border-1 border-gray-700" />
-      <div className="block 2lg:hidden">
+      <div className="block lg:hidden">
         <NowPlaying />
       </div>
       <h1 className="hidden">Footer</h1>
@@ -59,7 +59,7 @@ export default function Footer() {
           />
         </div>
       </div>
-      <p className="text-gray-500 text-right">
+      <p className="text-gray-400 text-right">
         &copy; {new Date().getFullYear()} All rights reserved
       </p>
     </div>

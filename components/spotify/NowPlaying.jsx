@@ -31,22 +31,22 @@ export default function NowPlaying() {
           <div className="absolute -top-1 -right-1 w-5">
             <SpotifyIcon />
           </div>
-          <h1 className="text-sm text-normal">Now Playing:</h1>
+          <p className="text-sm text-normal">Now Playing:</p>
           {song.link && (
             <a href={song.link} target="_blank" rel="noopener noreferrer">
-              <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
+              <p className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
                 {song.title}
-              </h2>
+              </p>
             </a>
           )}
           {!song.link && (
-            <h2 className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
+            <p className="font-semibold text-normal md:text-lg hover:underline cursor-pointer">
               {song.title}
-            </h2>
+            </p>
           )}
-          <h2 className="text-sm align-text-bottom">
+          <p className="text-sm align-text-bottom">
             by {song.artist ? song.artist : "Local File"}
-          </h2>
+          </p>
         </div>
       ) : (
         <div className="flex flex-col gap-2">
@@ -58,9 +58,9 @@ export default function NowPlaying() {
           >
             <SpotifyIcon />
           </a>
-          <h1 className="mx-auto text-sm">
+          <p className="mx-auto text-sm">
             Currently not playing music on Spotify
-          </h1>
+          </p>
         </div>
       )}
     </div>

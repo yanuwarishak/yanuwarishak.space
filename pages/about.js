@@ -1,27 +1,54 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/container/Container";
+
+import MainLayout from "layout/MainLayout";
+import { SpotifyWrapper } from "hooks/context/state";
+
 import TopTracks from "@/components/spotify/TopTracks";
+import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+import ContentNav from "@/components/ContentNav";
+
+import headerImage from "../public/assets/images/about-banner.jpg";
 
 function TableOfContents({ href, text, style }) {
   return (
     <Link href={`/about/#${href}`}>
-      <a className={`text-gray-500 underline hover:text-purple-400 ${style}`}>
+      <a className={`text-gray-400 underline hover:text-purple-400 ${style}`}>
         {text}
       </a>
     </Link>
   );
 }
+
+function leftContent() {
+  return null;
+}
+
+function rightContent() {
+  return (
+    <>
+      <SpotifyWrapper>
+        <SideNowPlaying />
+      </SpotifyWrapper>
+      <ContentNav slug="/about" />
+    </>
+  );
+}
+
 export default function About() {
   return (
-    <Container title="About – Yanuwar Ishak">
+    <MainLayout
+      title="About – Yanuwar Ishak"
+      LeftContent={leftContent}
+      RightContent={rightContent}
+    >
       {/* About me section */}
-      <div className="w-full flex flex-col md:flex-row justify-between md:items-center gap-6">
-        <div className="relative w-full md:w-2/5">
-          <h1 className="text-5xl font-bold z-1">About</h1>
-          <p className="text-6xl font-bold text-[#202020] absolute -top-8 -left-6 z-[-1] cursor-default">
-            アバウト
-          </p>
+      <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
+        <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
+          <span className="flex flex-col">
+            <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ アバウト</p>
+            <h1 className="text-5xl font-bold">About </h1>
+          </span>
           <div className="mt-2 flex flex-row flex-wrap gap-x-2 text-gray-500">
             <TableOfContents href="me" text="Me" />/
             <TableOfContents href="experience" text="Past experience" />/
@@ -40,10 +67,12 @@ export default function About() {
           <div className="h-48 w-full relative">
             <Image
               className="filter scale-x-[-1]"
-              src="/assets/images/about-photo.jpg"
+              src={headerImage}
               layout="fill"
               objectFit="cover"
-              alt="A photo of me at Kaliadem Bunker, Circa 2018"
+              alt="A photo of Yanuwar Ishak"
+              placeholder="blur"
+              objectPosition="0% 50%"
               priority
             />
           </div>
@@ -53,8 +82,8 @@ export default function About() {
         </div>
       </div>
 
-      <div className=" prose max-w-none text-gray-300">
-        <h3 id="me">Me</h3>
+      <div className="prose max-w-none text-gray-300">
+        <h2 id="me">Me</h2>
         <p>
           Hi, Yanuwar Ishak here. I'm a software engineer based in Indonesia,
           mainly focused on Web Development, especially front-end development. I
@@ -78,7 +107,7 @@ export default function About() {
           </a>
           .
         </p>
-        <h3 id="experience">Past Experience</h3>
+        <h2 id="experience">Past Experience</h2>
         <p>
           Through my college years, I have handled several projects which put me
           in several roles such as Android developer, UI/UX Designer,{" "}
@@ -103,9 +132,9 @@ export default function About() {
             <a>tech page.</a>
           </Link>
         </p>
-        <h3 className="italic" id="philosophy">
+        <h2 className="italic" id="philosophy">
           Scio me nihil scire
-        </h3>
+        </h2>
         <p>
           This quote was coined by Socrates which roughly translates to{" "}
           <i>"I know that I know nothing"</i>. I believe that learning is a
@@ -115,7 +144,7 @@ export default function About() {
           willingness to keep learning in order to adapt to better technology is
           a valuable asset that one can have.
         </p>
-        <h3 id="personal-life">Personal life</h3>
+        <h2 id="personal-life">Personal life</h2>
         <p>
           Like most people, I also have hobbies. I play sports when I have the
           chance, and I also like spending time playing games, watching videos,
@@ -126,9 +155,9 @@ export default function About() {
       {/* Spotify Section */}
       <div className="flex flex-col gap-1">
         <div className="bg-[#1DB954] p-4 text-black">
-          <h3 className="text-2xl font-semibold" id="monthly-tracks">
+          <p className="text-2xl font-semibold" id="monthly-tracks">
             My Spotify Monthly Top Tracks
-          </h3>
+          </p>
           <p>Music I've listened to recently</p>
         </div>
         <TopTracks />
@@ -144,7 +173,7 @@ export default function About() {
             </a>{" "}
             if we happen to have a similar music taste.
           </p>
-          <h3 id="this-site">About this site</h3>
+          <h2 id="this-site">About this site</h2>
           <p>
             This site was developed to document my personal journey. Most of
             what's written here might be or might not be something of use for
@@ -158,6 +187,6 @@ export default function About() {
           </p>
         </div>
       </div>
-    </Container>
+    </MainLayout>
   );
 }

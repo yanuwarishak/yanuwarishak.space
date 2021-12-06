@@ -18,8 +18,8 @@ const CustomLink = (props) => {
 
 const OpenSource = ({ link }) => {
   return (
-    <div className="flex flex-col mb-2 px-2 text-center bg-[#072507] justify-center items-center text-gray-200 leading-6 rounded-md">
-      <p>
+    <div className="text-center bg-[#072507] text-gray-200 rounded-md">
+      <p className="p-2">
         This project is an{" "}
         <a
           target="_blank"
@@ -37,8 +37,8 @@ const OpenSource = ({ link }) => {
 
 const CourseProject = ({ link, text }) => {
   return (
-    <div className="flex flex-col mb-2 px-2 text-center bg-gray-900 justify-center items-center text-gray-200 leading-6 rounded-md">
-      <p>
+    <div className="text-center bg-gray-900 text-gray-200 rounded-md">
+      <p className="p-2">
         This learning project is from an online course I took on{" "}
         <a
           target="_blank"

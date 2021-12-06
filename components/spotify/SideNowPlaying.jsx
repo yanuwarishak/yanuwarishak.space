@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useSpotifyContext } from "hooks/context/state";
 import { SpotifyIcon, ExpandIcon } from "../icons";
 import useSWR from "swr";
 
 export default function SideNowPlaying() {
-  const [isShown, setShown] = useState(true);
+  const { isOpen, setOpen } = useSpotifyContext();
+
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/spotify/now-playing", fetcher, {
     revalidateOnFocus: true,
@@ -29,13 +30,13 @@ export default function SideNowPlaying() {
   }
 
   return (
-    <aside className="bg-[#1DB954] w-48 flex flex-col justify-center items-center text-black text-center rounded-md relative">
-      {isShown ? (
+    <div className="bg-[#1DB954] w-full flex flex-col justify-center items-center text-black text-center rounded-md relative">
+      {isOpen ? (
         <>
           {song.isPlaying ? (
             <div className="cursor-default justify-center items-center flex flex-col p-2">
-              <div className="absolute w-5 h-5 top-2 left-2">
-                <SpotifyIcon />
+              <div className="absolute top-2 left-2">
+                <SpotifyIcon size="20px" />
               </div>
               <p className="font-semibold text-sm md:text-normal mb-2">
                 Now Playing:
@@ -70,8 +71,8 @@ export default function SideNowPlaying() {
             </div>
           ) : (
             <div className="flex flex-col p-4">
-              <div className="mx-auto w-10 mb-2">
-                <SpotifyIcon />
+              <div className="mx-auto mb-2">
+                <SpotifyIcon size="40px" />
               </div>
               <p className="mx-auto text-sm">
                 Currently not playing music on Spotify
@@ -81,29 +82,24 @@ export default function SideNowPlaying() {
           <div className="w-full flex flex-col items-center">
             <hr className="border-1 border-[#19a149] w-full hidden md:block" />
             <div
-              className="w-4 h-4 cursor-pointer my-2"
-              onClick={() => setShown(false)}
+              className="cursor-pointer my-2"
+              onClick={() => setOpen(!isOpen)}
             >
               <ExpandIcon />
             </div>
           </div>
         </>
       ) : (
-        <div className="flex flex-row justify-center items-center gap-1 py-2">
-          <div
-            className="w-4 h-4 rotate-180 cursor-pointer"
-            onClick={() => setShown(true)}
-          >
+        <div
+          className="flex flex-row justify-center items-center gap-1 py-2"
+          onClick={() => setOpen(!isOpen)}
+        >
+          <div className="rotate-180 cursor-pointer">
             <ExpandIcon />
           </div>
-          <p
-            className="text-black cursor-pointer font-semibold"
-            onClick={() => setShown(true)}
-          >
-            Spotify
-          </p>
+          <p className="text-black cursor-pointer font-semibold">Spotify</p>
         </div>
       )}
-    </aside>
+    </div>
   );
 }

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Container from "@/components/container/Container";
+import MainLayout from "layout/MainLayout";
 
 export default function NotFound() {
   return (
-    <Container>
+    <MainLayout LeftContent={() => null} RightContent={() => null}>
       <div className="min-h-[80vh] flex flex-col gap-12 justify-center">
         <h1 className="text-9xl tracking-widest">404</h1>
         <h2 className="text-2xl italic">
@@ -15,6 +15,6 @@ export default function NotFound() {
           </a>
         </Link>
       </div>
-    </Container>
+    </MainLayout>
   );
 }

@@ -2,7 +2,11 @@ const { fontFamily, screens } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./layout/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
@@ -10,6 +14,10 @@ module.exports = {
       ...screens,
     },
     extend: {
+      gridTemplateColumns: {
+        layout: "1fr minmax(600px, 672px) minmax(175px, 1fr)",
+        mediumLayout: "minmax(0px, 192px) minmax(460px, 672px)",
+      },
       screens: {
         "2lg": "1120px",
       },

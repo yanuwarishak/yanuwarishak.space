@@ -1,11 +1,13 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import AsideNavbar from "./AsideNavbar";
 
-export default function Container(props) {
-  const { children, ...customMeta } = props;
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+
+export default function MainLayout(props) {
+  const { LeftContent, RightContent, children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: "Yanuwar Ishak – Front-end Developer.",
@@ -47,14 +49,26 @@ export default function Container(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <div className="flex flex-col max-w-2xl md:px-0 p-6 self-center relative mx-auto gap-10 z-10">
-        <header className="mb-6">
+      <div className="flex flex-col self-center relative mx-auto md:grid md:grid-cols-mediumLayout lg:grid-cols-layout p-4 md:p-6 gap-4">
+        {/* Left Container */}
+        <aside className="relative hidden md:flex md:flex-col w-full items-end">
+          <div className="sticky top-6 w-full 2lg:w-48 flex flex-col items-end">
+            <AsideNavbar />
+            <LeftContent />
+          </div>
+        </aside>
+        {/* Main Content */}
+        <div className="flex flex-col justify-start gap-12 md:gap-8">
           <Navbar />
-        </header>
-        <main className="flex flex-col justify-start gap-8">{children}</main>
-        <footer>
+          <main className="flex flex-col min-h-screen gap-6">{children}</main>
           <Footer />
-        </footer>
+        </div>
+        {/* Right Container */}
+        <aside className="relative hidden lg:flex lg:flex-col w-full">
+          <div className="sticky top-6 w-full 2lg:w-64 flex flex-col gap-4">
+            <RightContent />
+          </div>
+        </aside>
       </div>
     </>
   );
