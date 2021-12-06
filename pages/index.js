@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllProjects } from "utils/getLocalData";
-
-import FeaturedPost from "@/components/FeaturedPost";
-import ProjectList from "@/components/project-list/ProjectList";
-import ParticleHomepage from "@/components/ParticleHomepage";
 
 import MainLayout from "layout/MainLayout";
 import { SpotifyWrapper } from "hooks/context/state";
+
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+import PostList from "@/components/post-list/PostList";
+import ProjectList from "@/components/project-list/ProjectList";
+import ParticleHomepage from "@/components/ParticleHomepage";
+
+import { featuredPost, featuredProject } from "@/data/featured.data";
 
 import {
   JavascriptIcon,
@@ -32,30 +33,7 @@ function rightContent() {
   );
 }
 
-const featuredPost = [
-  {
-    title: "If I Could Turn Back Time - 2021",
-    slug: "2021-rewind",
-    excerpt:
-      "A lot of things happened in my life this year, and here is what I wish I learned earlier or done earlier in 2021",
-    publishedAt: "2021-11-26",
-  },
-  {
-    title: "Menggunakan Preact pada Next.js",
-    slug: "preact-nextjs",
-    excerpt: "Apa itu Preact dan kapan waktu yang tepat untuk menggunakannya.",
-    publishedAt: "2021-11-26",
-  },
-  {
-    title: "My Discovery of Gap Property",
-    slug: "css-gap-property",
-    excerpt:
-      "Automatically set distances or gutters between each flex/grid items was never this easy.",
-    publishedAt: "2021-11-25",
-  },
-];
-
-export default function Home({ recentProjects }) {
+export default function Home() {
   const stacks = [
     <JavascriptIcon />,
     <ReactIcon />,
@@ -103,7 +81,7 @@ export default function Home({ recentProjects }) {
         <div className="flex flex-col gap-2">
           {featuredPost &&
             featuredPost.map((post, idx) => (
-              <FeaturedPost post={post} key={idx} />
+              <PostList posts={post} key={idx} />
             ))}
         </div>
         <Link href="/blog">
@@ -120,9 +98,9 @@ export default function Home({ recentProjects }) {
           </h1>
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {recentProjects &&
-            recentProjects.map((project, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {featuredProject &&
+            featuredProject.map((project, idx) => (
               <ProjectList project={project} key={idx} />
             ))}
         </div>
@@ -158,14 +136,4 @@ export default function Home({ recentProjects }) {
       </section>
     </MainLayout>
   );
-}
-
-export async function getStaticProps() {
-  const projects = getAllProjects("data/project");
-  const recentProjects = projects.slice(0, 4);
-  return {
-    props: {
-      recentProjects,
-    },
-  };
 }

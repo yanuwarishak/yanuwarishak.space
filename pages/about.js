@@ -1,10 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import MainLayout from "layout/MainLayout";
-import TopTracks from "@/components/spotify/TopTracks";
 import { SpotifyWrapper } from "hooks/context/state";
+
+import TopTracks from "@/components/spotify/TopTracks";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 import ContentNav from "@/components/ContentNav";
+
+import headerImage from "../public/assets/images/about-banner.jpg";
 
 function TableOfContents({ href, text, style }) {
   return (
@@ -39,7 +43,7 @@ export default function About() {
       RightContent={rightContent}
     >
       {/* About me section */}
-      <div className="w-full flex flex-col md:flex-row justify-between md:items-start gap-6">
+      <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
           <span className="flex flex-col">
             <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ アバウト</p>
@@ -63,10 +67,12 @@ export default function About() {
           <div className="h-48 w-full relative">
             <Image
               className="filter scale-x-[-1]"
-              src="/assets/images/about-photo.jpg"
+              src={headerImage}
               layout="fill"
               objectFit="cover"
-              alt="A photo of me at Kaliadem Bunker, Circa 2018"
+              alt="A photo of Yanuwar Ishak"
+              placeholder="blur"
+              objectPosition="0% 50%"
               priority
             />
           </div>

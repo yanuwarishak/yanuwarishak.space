@@ -58,6 +58,15 @@ export default function BlogContainer({ slug, post, children }) {
               </span>
             </p>
           </div>
+        </div>
+        {/* Post Title */}
+        <h1 className=" text-3xl md:leading-tight md:text-5xl font-bold">
+          {post.title}
+        </h1>
+        {/* Post Content */}
+        <section className="prose w-full max-w-none">{children}</section>
+        {/* Post Edit Button */}
+        <div className="flex flex-row justify-between items-center w-full -mb-4">
           {/* Share Btns */}
           <div className="flex flex-row gap-2">
             <ShareButton
@@ -71,15 +80,6 @@ export default function BlogContainer({ slug, post, children }) {
               url={`https://yanuwarishak.space/blog/${slug}`}
             />
           </div>
-        </div>
-        {/* Post Title */}
-        <h1 className=" text-3xl md:leading-tight md:text-5xl font-bold">
-          {post.title}
-        </h1>
-        {/* Post Content */}
-        <section className="prose w-full max-w-none">{children}</section>
-        {/* Post Edit Button */}
-        <div className="flex flex-row justify-end w-full -mb-4">
           <EditPost url={editUrl(slug)} />
         </div>
       </div>

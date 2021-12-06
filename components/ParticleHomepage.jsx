@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 export default function ParticleHomepage() {
   return (
     <Particles
-      className="relative w-full h-56 first:absolute hidden md:block"
+      className="relative w-full h-56 hidden md:block"
       canvasClassName="canvas-wrapper"
       id="hero-particle"
       options={{
@@ -36,7 +36,7 @@ export default function ParticleHomepage() {
             value: "#ffffff",
           },
           links: {
-            color: "#A78BFA",
+            color: "#916cff",
             distance: 100,
             enable: true,
             opacity: 0.75,
@@ -55,7 +55,7 @@ export default function ParticleHomepage() {
               enable: true,
               value_area: 400,
             },
-            value: 100,
+            value: 105,
           },
           opacity: {
             value: 0.5,

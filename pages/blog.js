@@ -8,6 +8,8 @@ import MainLayout from "layout/MainLayout";
 import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 
+import headerImage from "../public/assets/images/blog-banner.jpg";
+
 function leftContent() {
   return null;
 }
@@ -34,7 +36,7 @@ export default function Blog({ posts }) {
       RightContent={rightContent}
     >
       {/* Page Header */}
-      <div className="w-full flex flex-col md:flex-row justify-between md:items-start gap-6">
+      <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
           <span className="flex flex-col">
             <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ ブログ</p>
@@ -47,10 +49,11 @@ export default function Blog({ posts }) {
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
           <div className="h-48 w-full relative">
             <Image
-              src="/assets/images/writing-image.jpg"
+              src={headerImage}
               layout="fill"
               objectFit="cover"
               alt="A photo of pen and paper"
+              placeholder="blur"
               priority
             />
           </div>
@@ -68,7 +71,7 @@ export default function Blog({ posts }) {
         </div>
       </div>
       {/* Search bar */}
-      <div className="flex flex-col gap-2 top-1 sticky bg-[#121212] py-2">
+      <div className="flex flex-col gap-2 bg-[#121212]">
         <p className="text-gray-400">Search by Title</p>
         <div className="relative w-full mb-4">
           <input
@@ -111,6 +114,7 @@ export default function Blog({ posts }) {
 
 export async function getStaticProps() {
   const posts = getAllPosts("data/blog");
+  console.log(posts);
 
   return {
     props: {

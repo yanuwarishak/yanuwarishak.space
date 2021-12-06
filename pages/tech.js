@@ -1,8 +1,13 @@
-import MainLayout from "layout/MainLayout";
 import Image from "next/image";
+
+import MainLayout from "layout/MainLayout";
+
 import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 import ContentNav from "@/components/ContentNav";
+
+import headerImage from "../public/assets/images/tech-banner.jpg";
+
 import {
   mainStack,
   minorStack,
@@ -33,7 +38,7 @@ export default function Tech() {
       RightContent={rightContent}
     >
       {/* Page Header */}
-      <div className="w-full flex flex-col md:flex-row justify-between md:items-start gap-6">
+      <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
           <span className="flex flex-col">
             <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ テク</p>
@@ -47,10 +52,11 @@ export default function Tech() {
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
           <div className="h-48 w-full relative">
             <Image
-              src="/assets/images/code-vscode.jpg"
+              src={headerImage}
               layout="fill"
               objectFit="cover"
-              alt="A photo of programming language"
+              alt="Writing code on VS Code"
+              placeholder="blur"
               priority
             />
           </div>

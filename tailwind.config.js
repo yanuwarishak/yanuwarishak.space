@@ -15,7 +15,8 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        layout: "1fr minmax(0px, 672px) 1fr",
+        layout: "1fr minmax(600px, 672px) minmax(175px, 1fr)",
+        mediumLayout: "minmax(0px, 192px) minmax(460px, 672px)",
       },
       screens: {
         "2lg": "1120px",

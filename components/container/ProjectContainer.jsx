@@ -60,28 +60,17 @@ export default function ProjectContainer({ slug, project, children }) {
                 </span>
               </p>
             </div>
-            <div className="flex flex-row gap-2 flex-wrap">
-              <ShareButton
-                title={project.title}
-                text={project.excerpt}
-                url={`https://yanuwarishak.space/project/${slug}`}
-              />
-              <TwitterShare
-                title={project.title}
-                summary={project.excerpt}
-                url={`https://yanuwarishak.space/project/${slug}`}
-              />
-            </div>
           </div>
           {/* Project Title */}
-          <h1 className="text-5xl font-bold -mt-1">
-            {project.title}
-          </h1>
+          <h1 className="text-3xl md:text-5xl font-bold -mt-1">{project.title}</h1>
           {/* Tech stack and share button */}
           <div className="flex flex-row w-full justify-between items-center gap-2">
             <div className="flex flex-row flex-wrap gap-2">
               {project.techs.map((tech) => (
-                <p key={tech} className="px-2 py-1 rounded-md bg-gradient-to-r from-gray-800 to-gray-900">
+                <p
+                  key={tech}
+                  className="px-2 py-1 rounded-md bg-gradient-to-r from-gray-800 to-gray-900"
+                >
                   #{tech}
                 </p>
               ))}
@@ -91,7 +80,19 @@ export default function ProjectContainer({ slug, project, children }) {
         {/* Article */}
         <section className="prose w-full max-w-none">{children}</section>
         {/* Edit Button */}
-        <div className="flex flex-row justify-end w-full -mb-4">
+        <div className="flex flex-row justify-between items-center w-full -mb-4">
+          <div className="flex flex-row gap-2 flex-wrap">
+            <ShareButton
+              title={project.title}
+              text={project.excerpt}
+              url={`https://yanuwarishak.space/project/${slug}`}
+            />
+            <TwitterShare
+              title={project.title}
+              summary={project.excerpt}
+              url={`https://yanuwarishak.space/project/${slug}`}
+            />
+          </div>
           <EditPost url={editUrl(slug)} />
         </div>
       </div>
