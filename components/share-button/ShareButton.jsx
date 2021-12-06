@@ -19,7 +19,7 @@ export function ShareButton({ title, summary, url }) {
         url: url,
       })
       .then()
-      .catch((error) => console.log("Sharing error", error));
+      .catch((error) => console.error("Sharing error", error));
   };
   return isSupportWebShare ? (
     <a

@@ -1,6 +1,7 @@
+import useSWR from "swr";
+import Image from "next/image";
 import { useSpotifyContext } from "hooks/context/state";
 import { SpotifyIcon, ExpandIcon } from "../icons";
-import useSWR from "swr";
 
 export default function SideNowPlaying() {
   const { isOpen, setOpen } = useSpotifyContext();
@@ -41,12 +42,13 @@ export default function SideNowPlaying() {
               <p className="font-semibold text-sm md:text-normal mb-2">
                 Now Playing:
               </p>
-              <div className="mb-2">
+              <div className="relative mb-2">
                 {song.image ? (
-                  <img
+                  <Image
+                    className="rounded-md"
+                    height={96}
+                    width={96}
                     src={song.image}
-                    width="80"
-                    height="80"
                     alt={song.title}
                   />
                 ) : (

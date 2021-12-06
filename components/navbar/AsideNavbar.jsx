@@ -25,7 +25,7 @@ function NavItem({ href, text }) {
 
 export default function AsideNavbar() {
   return (
-    <nav className="w-full flex flex-col items-end" id="menu">
+    <nav className="w-full flex flex-col items-end">
       <ul className="flex w-full flex-col items-start">
         <NavItem href="/" text="🏠 Home" />
         <NavItem href="/project" text="🛠 Project" />

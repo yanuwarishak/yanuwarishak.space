@@ -9,11 +9,11 @@ import ContentNav from "@/components/ContentNav";
 import headerImage from "../public/assets/images/tech-banner.jpg";
 
 import {
-  mainStack,
+  techStack,
   minorStack,
   currentlyLearning,
   thingsToTry,
-} from "@/data/techstacks";
+} from "@/data/techstacks.data";
 
 function leftContent() {
   return null;
@@ -41,7 +41,7 @@ export default function Tech() {
       <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
           <span className="flex flex-col">
-            <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ テク</p>
+            <p className="text-xl font-bold text-[#616161] ml-2">/ テク</p>
             <h1 className="text-5xl font-bold">Tech </h1>
           </span>
           <p className="mt-2 text-gray-400 leading-relaxed">
@@ -79,13 +79,20 @@ export default function Tech() {
           Main tech stacks
         </h2>
         <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-2 gap-3 xs:grid-cols-4">
-            {mainStack.map((stack, idx) => (
+          <div className="grid grid-cols-4 gap-3 items-center text-center h-24 md:h-32">
+            {techStack.map((stack, idx) => (
               <div
+                className="relative bg-gray-900 flex justify-center items-center h-full w-full rounded-md"
                 key={idx}
-                className="bg-gray-900 p-2 flex mx-auto justify-center items-center w-full rounded-md"
               >
-                {stack}
+                <div className="relative w-2/3 h-2/3">
+                  <Image
+                    src={stack.url}
+                    alt={stack.desc}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </div>
             ))}
           </div>

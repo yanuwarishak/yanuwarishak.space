@@ -45,7 +45,7 @@ export default function BlogContainer({ slug, post, children }) {
             <div className="my-auto h-6">
               <Image
                 className="rounded-full"
-                src="/assets/images/avatar.png"
+                src="/assets/images/avatar.jpg"
                 width={24}
                 height={24}
                 priority

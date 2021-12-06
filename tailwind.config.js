@@ -15,6 +15,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
+        tracklist: "fit-content(30px) fit-content(40px) 1fr",
         layout: "1fr minmax(600px, 672px) minmax(175px, 1fr)",
         mediumLayout: "minmax(0px, 192px) minmax(460px, 672px)",
       },

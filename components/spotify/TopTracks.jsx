@@ -13,9 +13,9 @@ export default function TopTracks() {
       {!data ||
         (error && (
           <div className="flex flex-col p-2 bg-gray-800">
-            <h4 className="font-semibold text-gray-200">
-              It's either loading data or Spotify is down
-            </h4>
+            <p className="font-semibold text-gray-200">
+              Loading data...
+            </p>
             <p className=" font-normal text-gray-400">
               try again in a few minutes
             </p>

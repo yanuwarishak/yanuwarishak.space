@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import AsideNavbar from "./AsideNavbar";
+import AsideNavbar from "@/components/navbar/AsideNavbar";
 
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";

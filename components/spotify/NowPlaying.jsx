@@ -55,6 +55,7 @@ export default function NowPlaying() {
             href="https://open.spotify.com/user/212rshe3omsf3edodvt4rqb7q?si=5b3281c13e964fe4"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Yanuwar Ishak's Spotify Account"
           >
             <SpotifyIcon />
           </a>

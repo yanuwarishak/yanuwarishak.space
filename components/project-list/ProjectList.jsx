@@ -12,14 +12,15 @@ export default function ProjectList({ project }) {
       </p>
       <Link href={`/project/${project.slug}`}>
         <a>
-          <Image
-            className="cursor-pointer hover:scale-110 transition duration-500 filter opacity-80 hover:opacity-100"
-            src={project.image}
-            alt={project.title}
-            width={1366}
-            height={768}
-            priority
-          />
+          <div className="relative w-full h-48">
+            <Image
+              className="cursor-pointer hover:scale-110 transition duration-500 filter opacity-80 hover:opacity-100"
+              src={project.image}
+              alt={project.title}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </a>
       </Link>
       <div className="flex flex-col w-full p-2 py-3 rounded-b-xl cursor-default overflow-hidden">

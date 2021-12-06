@@ -48,7 +48,7 @@ export default function Project({ projects }) {
       <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
           <span className="flex flex-col">
-            <p className="text-xl font-bold text-[#3f3f3f] ml-2">
+            <p className="text-xl font-bold text-[#616161] ml-2">
               / プロジェクト
             </p>
             <h1 className="text-5xl font-bold">Project </h1>

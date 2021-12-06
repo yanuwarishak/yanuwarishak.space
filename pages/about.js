@@ -46,7 +46,7 @@ export default function About() {
       <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
           <span className="flex flex-col">
-            <p className="text-xl font-bold text-[#3f3f3f] ml-2">/ アバウト</p>
+            <p className="text-xl font-bold text-[#616161] ml-2">/ アバウト</p>
             <h1 className="text-5xl font-bold">About </h1>
           </span>
           <div className="mt-2 flex flex-row flex-wrap gap-x-2 text-gray-500">
@@ -82,7 +82,10 @@ export default function About() {
         </div>
       </div>
 
-      <div className="prose max-w-none text-gray-300">
+      <div
+        className="prose max-w-none text-gray-300"
+        style={{ marginTop: "-24px" }}
+      >
         <h2 id="me">Me</h2>
         <p>
           Hi, Yanuwar Ishak here. I'm a software engineer based in Indonesia,
@@ -97,13 +100,13 @@ export default function About() {
           >
             my LinkedIn
           </a>{" "}
-          or you can download my resume{" "}
+          or you can download{" "}
           <a
             href="https://api.vercel.com/now/files/prj_LgXK4jXrS3OoUC53gxg4qA6pwQuL/ac45921331425f2efe31a2251c289934e76d771b96dd0f539ad95618156fc0f1/resume-yanuwar-Ishak.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            here
+            my resume
           </a>
           .
         </p>
@@ -179,9 +182,9 @@ export default function About() {
             what's written here might be or might not be something of use for
             you. I would be grateful if you happen to find something that helped
             you. If you want to read more about this site such as technology
-            used, you can go{" "}
+            used, you can visit{" "}
             <Link href="/project/personal-website">
-              <a>here</a>
+              <a>about this site</a>
             </Link>
             , all in all thank you for the visit, see you.
           </p>

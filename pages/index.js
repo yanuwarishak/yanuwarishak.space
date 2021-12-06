@@ -7,17 +7,11 @@ import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 import PostList from "@/components/post-list/PostList";
 import ProjectList from "@/components/project-list/ProjectList";
-import ParticleHomepage from "@/components/ParticleHomepage";
+import { SocialIcons } from "@/components/icons";
 
 import { featuredPost, featuredProject } from "@/data/featured.data";
-
-import {
-  JavascriptIcon,
-  ReactIcon,
-  NextjsIcon,
-  NodeIcon,
-  SocialIcons,
-} from "@/components/icons";
+import { techStack } from "@/data/techstacks.data";
+import headerImage from "../public/assets/images/avatar.jpg";
 
 function leftContent() {
   return null;
@@ -34,19 +28,17 @@ function rightContent() {
 }
 
 export default function Home() {
-  const stacks = [
-    <JavascriptIcon />,
-    <ReactIcon />,
-    <NextjsIcon />,
-    <NodeIcon />,
-  ];
   return (
     <MainLayout LeftContent={leftContent} RightContent={rightContent}>
-      <ParticleHomepage />
       {/* Intro Section */}
-      <section className="flex flex-col-reverse md:flex-row justify-between items-start gap-4 md:gap-2 mt-2">
+      <section className="flex flex-col-reverse md:flex-row justify-between items-start gap-4 md:gap-2">
         <div className="flex flex-col gap-2 text-left md:w-3/4">
-          <h1 className="text-4xl font-bold">Yanuwar Ishak</h1>
+          <span className="flex flex-col">
+            <p className="text-xl font-bold text-[#616161] ml-2 hidden md:block">
+              / ヤヌワル イシャク
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold">Yanuwar Ishak</h1>
+          </span>
           <h2 className="text-xl text-purple-400 font-semibold">
             Front-end Developer
           </h2>
@@ -58,10 +50,11 @@ export default function Home() {
           <div className="relative w-24 h-24 md:w-32 md:h-32">
             <Image
               className="rounded-full my-auto"
-              src="/assets/images/avatar.png"
+              src={headerImage}
               alt="Yanuwar Ishak Avatar"
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
               priority
             />
           </div>
@@ -94,7 +87,7 @@ export default function Home() {
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
           <h1 className="text-3xl font-semibold mr-0 md:mr-2">
-            Recent&nbsp;Projects
+            Featured&nbsp;Projects
           </h1>
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
@@ -118,13 +111,20 @@ export default function Home() {
           </h1>
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
-        <div className="grid grid-cols-4 gap-3 items-center text-center">
-          {stacks.map((stack, idx) => (
+        <div className="grid grid-cols-4 gap-3 items-center text-center h-24 md:h-32">
+          {techStack.map((stack, idx) => (
             <div
-              className="bg-[#1a1a1a] p-2 flex justify-center items-center h-32 "
+              className="relative bg-[#1a1a1a] flex justify-center items-center h-full w-full"
               key={idx}
             >
-              {stack}
+              <div className="relative w-2/3 h-2/3">
+                <Image
+                  src={stack.url}
+                  alt={stack.desc}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
             </div>
           ))}
         </div>

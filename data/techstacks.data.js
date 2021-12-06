@@ -1,15 +1,20 @@
-import {
-  JavascriptIcon,
-  ReactIcon,
-  NextjsIcon,
-  NodeIcon,
-} from "@/components/icons";
-
-export const mainStack = [
-  <JavascriptIcon />,
-  <ReactIcon />,
-  <NextjsIcon />,
-  <NodeIcon />,
+export const techStack = [
+  {
+    url: "/svg/js-icon.svg",
+    desc: "JavaScript Icon",
+  },
+  {
+    url: "/svg/node-icon.svg",
+    desc: "Node.js Icon",
+  },
+  {
+    url: "/svg/react-icon.svg",
+    desc: "React Icon",
+  },
+  {
+    url: "/svg/next-icon.svg",
+    desc: "Next.js Icon",
+  },
 ];
 
 export const minorStack = [
