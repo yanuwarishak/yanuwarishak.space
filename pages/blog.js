@@ -54,6 +54,7 @@ export default function Blog({ posts }) {
               objectFit="cover"
               alt="A photo of pen and paper"
               placeholder="blur"
+              sizes="92vw, min-width(480px) 50vw"
               priority
             />
           </div>

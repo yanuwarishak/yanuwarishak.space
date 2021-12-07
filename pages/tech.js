@@ -57,6 +57,7 @@ export default function Tech() {
               objectFit="cover"
               alt="Writing code on VS Code"
               placeholder="blur"
+              sizes="92vw, min-width(480px) 50vw"
               priority
             />
           </div>

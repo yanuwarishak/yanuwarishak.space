@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <MainLayout LeftContent={leftContent} RightContent={rightContent}>
       {/* Intro Section */}
-      <section className="flex flex-col-reverse md:flex-row justify-between items-start gap-4 md:gap-2">
+      <section className="flex flex-col-reverse md:flex-row justify-between items-start gap-4 md:gap-2 mt-12 xs:mt-0">
         <div className="flex flex-col gap-2 text-left md:w-3/4">
           <span className="flex flex-col">
             <p className="text-xl font-bold text-[#616161] ml-2 hidden md:block">
@@ -47,7 +47,7 @@ export default function Home() {
           </h2>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <div className="relative w-24 h-24 md:w-32 md:h-32">
+          <div className="relative w-20 h-20 xs:w-24 xs:h-24 md:w-32 md:h-32">
             <Image
               className="rounded-full my-auto"
               src={headerImage}

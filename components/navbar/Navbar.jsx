@@ -23,7 +23,7 @@ function NavItem({ href, text }) {
 
 export default function Navbar() {
   return (
-    <nav className="hidden xs:flex md:hidden items-center justify-end w-full relative border-gray-700 bg-opacity-60 text-gray-400">
+    <nav className="hidden xs:flex md:hidden items-center justify-end w-full text-gray-400">
       <ul className="flex text-center w-min gap-2">
         <NavItem href="/" text="Home" />
         <NavItem href="/project" text="Project" />

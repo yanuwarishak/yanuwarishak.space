@@ -67,6 +67,7 @@ export default function Project({ projects }) {
               objectFit="cover"
               alt="Writing code on VS Code"
               placeholder="blur"
+              sizes="92vw, min-width(480px) 50vw"
               priority
             />
           </div>
@@ -105,14 +106,14 @@ export default function Project({ projects }) {
         </div>
       </div>
       {/* Project List */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {filteredProjects.map((project, idx) => {
-          return <ProjectList project={project} key={idx} />;
-        })}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {!filteredProjects.length &&
           projects.map((project, idx) => {
             return <ProjectList project={project} key={idx} />;
           })}
+        {filteredProjects.map((project, idx) => {
+          return <ProjectList project={project} key={idx} />;
+        })}
       </div>
     </MainLayout>
   );

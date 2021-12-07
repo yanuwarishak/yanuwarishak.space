@@ -13,9 +13,8 @@ export default function SongList({ tracks }) {
           aria-label={track.title}
         >
           <p className="mx-2 text-gray-400 text-center w-5">{idx + 1}</p>
-          <div className="relative mx-2 min-w-max">
+          <div className="relative mx-1 min-w-max">
             <Image
-              className="self-center"
               width="40"
               height="40px"
               src={track.image}
@@ -23,7 +22,7 @@ export default function SongList({ tracks }) {
             />
           </div>
           <div className="flex flex-col ml-2">
-            <p className="font-semibold text-gray-200">{track.title}</p>
+            <p className="font-semibold text-gray-200 leading-tight first-line:leading-none">{track.title}</p>
             <p className=" font-normal text-gray-400">{track.artists}</p>
           </div>
         </a>

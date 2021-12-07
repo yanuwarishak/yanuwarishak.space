@@ -73,6 +73,7 @@ export default function About() {
               alt="A photo of Yanuwar Ishak"
               placeholder="blur"
               objectPosition="0% 50%"
+              sizes="92vw, min-width(480px) 50vw"
               priority
             />
           </div>

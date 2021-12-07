@@ -19,6 +19,7 @@ export default function ProjectList({ project }) {
               alt={project.title}
               layout="fill"
               objectFit="cover"
+              sizes="92vw, min-width(640px) 360px"
             />
           </div>
         </a>

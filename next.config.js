@@ -2,6 +2,7 @@ module.exports = {
   swcMinify: true,
   images: {
     domains: ["i.scdn.co"],
+    deviceSizes: [480, 640],
   },
   webpack(config, { dev, isServer }) {
     // Replace React with Preact only in client production build
