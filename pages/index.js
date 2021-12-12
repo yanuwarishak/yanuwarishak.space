@@ -30,6 +30,7 @@ function rightContent() {
 export default function Home() {
   return (
     <MainLayout LeftContent={leftContent} RightContent={rightContent}>
+      <h1 className="hidden">yanuwarishak.space</h1>
       {/* Intro Section */}
       <section className="flex flex-col-reverse md:flex-row justify-between items-start gap-4 md:gap-2 mt-12 xs:mt-0">
         <div className="flex flex-col gap-2 text-left md:w-3/4">

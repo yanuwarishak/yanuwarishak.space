@@ -29,7 +29,7 @@ export default function NowPlaying() {
       {song.isPlaying ? (
         <div className="flex flex-col relative">
           <div className="absolute -top-1 -right-1 w-5">
-            <SpotifyIcon />
+            <SpotifyIcon size="20px" />
           </div>
           <p className="text-sm text-normal">Now Playing:</p>
           {song.link && (
@@ -57,7 +57,7 @@ export default function NowPlaying() {
             rel="noopener noreferrer"
             aria-label="Yanuwar Ishak's Spotify Account"
           >
-            <SpotifyIcon />
+            <SpotifyIcon size="40px" />
           </a>
           <p className="mx-auto text-sm">
             Currently not playing music on Spotify

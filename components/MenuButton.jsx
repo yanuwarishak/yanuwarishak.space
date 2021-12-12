@@ -6,13 +6,13 @@ function NavItem({ href, Icon, text }) {
   const router = useRouter();
 
   return (
-    <div className={`w-full ${router.pathname == href ? "bg-[#131313]" : ""}`}>
+    <span className={`w-full ${router.pathname == href ? "bg-[#131313]" : ""}`}>
       <Link href={href}>
         <a className="flex items-center w-6 h-full m-auto" aria-label={text}>
           <Icon color={router.pathname == href ? "#a78bfa" : "#616161"} />
         </a>
       </Link>
-    </div>
+    </span>
   );
 }
 
