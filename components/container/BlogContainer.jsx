@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { parseISO, format } from "date-fns";
 
 import MainLayout from "layout/MainLayout";
 import ContentNav from "../ContentNav";
@@ -14,6 +13,15 @@ function leftContent() {
 }
 
 export default function BlogContainer({ slug, post, children }) {
+  const options = {
+    day: "numeric",
+    year: "numeric",
+    month: "long",
+  };
+  const publishedAt = new Date(post.publishedAt).toLocaleString(
+    "en-US",
+    options
+  );
   return (
     <MainLayout
       title={`${post.title} – Yanuwar Ishak`}
@@ -45,7 +53,7 @@ export default function BlogContainer({ slug, post, children }) {
             <div className="my-auto h-6">
               <Image
                 className="rounded-full"
-                src="/assets/images/avatar.jpg"
+                src="/assets/images/avatar.webp"
                 width={24}
                 height={24}
                 priority
@@ -53,9 +61,7 @@ export default function BlogContainer({ slug, post, children }) {
             </div>
             <p className="text-gray-200">
               Yanuwar Ishak /{" "}
-              <span className="text-gray-400">
-                {format(parseISO(post.publishedAt), "dd MMMM yyyy")}
-              </span>
+              <span className="text-gray-400">{publishedAt}</span>
             </p>
           </div>
         </div>

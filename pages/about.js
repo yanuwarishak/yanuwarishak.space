@@ -8,7 +8,7 @@ import TopTracks from "@/components/spotify/TopTracks";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 import ContentNav from "@/components/ContentNav";
 
-import headerImage from "../public/assets/images/about-banner.jpg";
+import headerImage from "../public/assets/images/about-banner.webp";
 
 function TableOfContents({ href, text, style }) {
   return (

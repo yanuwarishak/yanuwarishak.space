@@ -9,7 +9,7 @@ import MainLayout from "layout/MainLayout";
 import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 
-import headerImage from "../public/assets/images/project-banner.jpg";
+import headerImage from "../public/assets/images/project-banner.webp";
 
 function leftContent() {
   return null;

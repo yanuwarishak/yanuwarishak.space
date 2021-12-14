@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { parseISO, format } from "date-fns";
 
 import MainLayout from "layout/MainLayout";
 import ContentNav from "../ContentNav";
@@ -14,6 +13,14 @@ function leftContent() {
 }
 
 export default function ProjectContainer({ slug, project, children }) {
+  const options = {
+    year: "numeric",
+    month: "long",
+  };
+  const publishedAt = new Date(project.publishedAt).toLocaleString(
+    "en-US",
+    options
+  );
   return (
     <MainLayout
       title={`${project.title} – Yanuwar Ishak`}
@@ -46,7 +53,7 @@ export default function ProjectContainer({ slug, project, children }) {
               <div className="my-auto h-6">
                 <Image
                   className="rounded-full"
-                  src="/assets/images/avatar.jpg"
+                  src="/assets/images/avatar.webp"
                   width={24}
                   height={24}
                   priority
@@ -55,14 +62,15 @@ export default function ProjectContainer({ slug, project, children }) {
               <p className="text-gray-200">
                 Yanuwar Ishak /{" "}
                 <span className="text-gray-400">
-                  {project.category[0]} /{" "}
-                  {format(parseISO(project.publishedAt), "MMMM yyyy")}
+                  {project.category[0]} / {publishedAt}
                 </span>
               </p>
             </div>
           </div>
           {/* Project Title */}
-          <h1 className="text-3xl md:text-5xl font-bold -mt-1">{project.title}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold -mt-1">
+            {project.title}
+          </h1>
           {/* Tech stack and share button */}
           <div className="flex flex-row w-full justify-between items-center gap-2">
             <div className="flex flex-row flex-wrap gap-2">

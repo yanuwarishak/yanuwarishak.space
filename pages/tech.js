@@ -6,7 +6,7 @@ import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 import ContentNav from "@/components/ContentNav";
 
-import headerImage from "../public/assets/images/tech-banner.jpg";
+import headerImage from "../public/assets/images/tech-banner.webp";
 
 import {
   techStack,

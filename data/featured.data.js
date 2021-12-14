@@ -6,7 +6,7 @@ export const featuredPost = [
       publishedAt: "2021-11-26",
       summary:
         "A lot of things happened in my life this year, and here is what I wish I learned earlier or done earlier in 2021",
-      image: "/assets/images/blog/2021-rewind/banner.jpg",
+      image: "/assets/images/blog/2021-rewind/banner.webp",
     },
   },
   {
@@ -16,7 +16,7 @@ export const featuredPost = [
       publishedAt: "2021-11-26",
       summary:
         "Apa itu Preact dan kapan waktu yang tepat untuk menggunakannya.",
-      image: "/assets/images/blog/nextjs-preact/banner.png",
+      image: "/assets/images/blog/nextjs-preact/banner.webp",
     },
   },
   {
@@ -26,7 +26,7 @@ export const featuredPost = [
       publishedAt: "2021-11-25",
       summary:
         "Automatically set distances or gutters between each flex/grid items was never this easy.",
-      image: "/assets/images/blog/css-gap-property/banner.jpg",
+      image: "/assets/images/blog/css-gap-property/banner.webp",
     },
   },
 ];
@@ -40,7 +40,7 @@ export const featuredProject = [
     techs: ["Next.js", "Tailwind css"],
     excerpt:
       "A personal website to try out new technology and showcasing my portfolio.",
-    image: "/assets/images/project/yanuwarishak-space.jpg",
+    image: "/assets/images/project/yanuwarishak-space.webp",
   },
   {
     slug: "dev-connector",
@@ -50,7 +50,7 @@ export const featuredProject = [
     techs: ["MongoDB", "React", "Node.js"],
     excerpt:
       "A MERN stack application where developer can share their profile.",
-    image: "/assets/images/project/developer-connector.jpg",
+    image: "/assets/images/project/developer-connector.webp",
   },
   {
     slug: "cityplan-api",
@@ -60,7 +60,7 @@ export const featuredProject = [
     techs: ["Go", "PostgreSQL"],
     excerpt:
       "An API to process raw GeoJSON data into desirable results through several endpoints.",
-    image: "/assets/images/project/cityplan.jpg",
+    image: "/assets/images/project/cityplan.webp",
   },
   {
     slug: "crown-clothing",
@@ -70,6 +70,6 @@ export const featuredProject = [
     techs: ["React", "Redux", "Firebase"],
     excerpt:
       "A client-side rendered e-commerce clothing site developed using React.js.",
-    image: "/assets/images/project/crown-clothing.jpg",
+    image: "/assets/images/project/crown-clothing.webp",
   },
 ];

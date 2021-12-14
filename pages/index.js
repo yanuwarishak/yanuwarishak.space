@@ -11,7 +11,7 @@ import { SocialIcons } from "@/components/icons";
 
 import { featuredPost, featuredProject } from "@/data/featured.data";
 import { techStack } from "@/data/techstacks.data";
-import headerImage from "../public/assets/images/avatar.jpg";
+import headerImage from "../public/assets/images/avatar.webp";
 
 function leftContent() {
   return null;

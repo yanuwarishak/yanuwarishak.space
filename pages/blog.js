@@ -8,7 +8,7 @@ import MainLayout from "layout/MainLayout";
 import { SpotifyWrapper } from "hooks/context/state";
 import SideNowPlaying from "@/components/spotify/SideNowPlaying";
 
-import headerImage from "../public/assets/images/blog-banner.jpg";
+import headerImage from "../public/assets/images/blog-banner.webp";
 
 function leftContent() {
   return null;

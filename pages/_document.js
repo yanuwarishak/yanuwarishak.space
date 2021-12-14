@@ -32,10 +32,11 @@ class MyDocument extends Document {
           <link rel="manifest" href="/favicon/site.webmanifest" />
           {/* Global site tag (gtag.js) - Google Analytics */}
           <script
-            async
+            defer
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
           <script
+            defer
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
