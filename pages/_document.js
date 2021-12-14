@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   render() {
@@ -31,12 +32,12 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/favicon/site.webmanifest" />
           {/* Global site tag (gtag.js) - Google Analytics */}
-          <script
-            defer
+          <Script
+            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
-          <script
-            defer
+          <Script
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
