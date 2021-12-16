@@ -3,7 +3,11 @@ import MainLayout from "layout/MainLayout";
 
 export default function NotFound() {
   return (
-    <MainLayout LeftContent={() => null} RightContent={() => null}>
+    <MainLayout
+      title="404 - Not Found"
+      LeftContent={() => null}
+      RightContent={() => null}
+    >
       <div className="min-h-[80vh] flex flex-col gap-12 justify-center">
         <h1 className="text-9xl tracking-widest">404</h1>
         <h2 className="text-2xl italic">
