@@ -17,10 +17,12 @@ export default function ProjectContainer({ slug, project, children }) {
     year: "numeric",
     month: "long",
   };
+
   const publishedAt = new Date(project.publishedAt).toLocaleString(
     "en-US",
     options
   );
+
   return (
     <MainLayout
       title={`${project.title} – Yanuwar Ishak`}
@@ -30,7 +32,7 @@ export default function ProjectContainer({ slug, project, children }) {
       type="article"
       LeftContent={leftContent}
       RightContent={() => {
-        return <ContentNav slug={`/blog/${slug}`} />;
+        return <ContentNav slug={`/project/${slug}`} />;
       }}
     >
       <div className="w-full flex flex-col items-start justify-center gap-6">
