@@ -13,10 +13,11 @@ export default function NotFound() {
         <h2 className="text-2xl italic">
           /unfortunately the page you're looking for doesn't exist yet/
         </h2>
-        <Link href="/">
-          <a className="px-4 p-2 border-gray-200 border rounded-sm hover:bg-gray-200 hover:text-black ease-in-out duration-300">
-            Home
-          </a>
+        <Link
+          href="/"
+          className="px-4 p-2 border-gray-200 border rounded-sm hover:bg-gray-200 hover:text-black ease-in-out duration-300"
+        >
+          Home
         </Link>
       </div>
     </MainLayout>

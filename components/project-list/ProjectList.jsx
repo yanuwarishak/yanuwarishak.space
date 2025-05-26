@@ -11,18 +11,18 @@ export default function ProjectList({ project }) {
         {project.category[1]}
       </p>
       <Link href={`/project/${project.slug}`}>
-        <a>
-          <div className="relative w-full h-48">
-            <Image
-              className="cursor-pointer hover:scale-110 transition duration-500 filter opacity-80 hover:opacity-100"
-              src={project.image}
-              alt={project.title}
-              layout="fill"
-              objectFit="cover"
-              sizes="92vw, min-width(640px) 360px"
-            />
-          </div>
-        </a>
+        <div className="relative w-full h-48">
+          <Image
+            className="cursor-pointer hover:scale-110 transition duration-500 filter opacity-80 hover:opacity-100"
+            width={250}
+            height={250}
+            src={project.image}
+            alt={project.title}
+            layout="fill"
+            objectFit="cover"
+            sizes="92vw, min-width(640px) 360px"
+          />
+        </div>
       </Link>
       <div className="flex flex-col w-full p-2 py-3 rounded-b-xl cursor-default overflow-hidden">
         <div className="flex flex-row mb-2 justify-between w-full">
@@ -41,10 +41,11 @@ export default function ProjectList({ project }) {
           </div>
         </div>
         <h2 className="mb-1 font-medium text-lg text-gray-200 ">
-          <Link href={`/project/${project.slug}`}>
-            <a className="hover:text-purple-500 hover:underline overflow-ellipsis">
-              {project.title}
-            </a>
+          <Link
+            href={`/project/${project.slug}`}
+            className="hover:text-purple-500 hover:underline overflow-ellipsis"
+          >
+            {project.title}
           </Link>
         </h2>
         <p className="text-gray-400">{project.excerpt}</p>

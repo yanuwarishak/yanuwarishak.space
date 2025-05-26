@@ -13,10 +13,8 @@ const ExternalLink = ({ href, text }) => (
 );
 
 const InternalLink = ({ href, text }) => (
-  <Link href={href}>
-    <a className="text-gray-400 hover:text-gray-300 transition">
-      <p>{text}</p>
-    </a>
+  <Link href={href} className="text-gray-400 hover:text-gray-300 transition">
+    <p>{text}</p>
   </Link>
 );
 

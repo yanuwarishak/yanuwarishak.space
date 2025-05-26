@@ -7,10 +7,12 @@ function NavItem({ href, Icon, text }) {
 
   return (
     <span className={`w-full ${router.pathname == href ? "bg-[#131313]" : ""}`}>
-      <Link href={href}>
-        <a className="flex items-center w-6 h-full m-auto" aria-label={text}>
-          <Icon color={router.pathname == href ? "#a78bfa" : "#616161"} />
-        </a>
+      <Link
+        href={href}
+        className="flex items-center w-6 h-full m-auto"
+        aria-label={text}
+      >
+        <Icon color={router.pathname == href ? "#a78bfa" : "#616161"} />
       </Link>
     </span>
   );

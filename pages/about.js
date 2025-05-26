@@ -12,10 +12,11 @@ import headerImage from "../public/assets/images/about-banner.webp";
 
 function TableOfContents({ href, text, style }) {
   return (
-    <Link href={`/about/#${href}`}>
-      <a className={`text-gray-400 underline hover:text-purple-400 ${style}`}>
-        {text}
-      </a>
+    <Link
+      href={`/about/#${href}`}
+      className={`text-gray-400 underline hover:text-purple-400 ${style}`}
+    >
+      {text}
     </Link>
   );
 }
@@ -66,6 +67,8 @@ export default function About() {
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
           <div className="h-48 w-full relative">
             <Image
+              width={50}
+              height={50}
               className="filter scale-x-[-1]"
               src={headerImage}
               layout="fill"
@@ -132,9 +135,7 @@ export default function About() {
           </a>{" "}
           and Web Developer. I have listed my tech knowledge that I have worked
           with and that I'm currently learning in{" "}
-          <Link href="/tech">
-            <a>tech page.</a>
-          </Link>
+          <Link href="/tech">tech page.</Link>
         </p>
         <h2 className="italic" id="philosophy">
           Scio me nihil scire
@@ -184,10 +185,8 @@ export default function About() {
             you. I would be grateful if you happen to find something that helped
             you. If you want to read more about this site such as technology
             used, you can visit{" "}
-            <Link href="/project/personal-website">
-              <a>about this site</a>
-            </Link>
-            , all in all thank you for the visit, see you.
+            <Link href="/project/personal-website">about this site</Link>, all
+            in all thank you for the visit, see you.
           </p>
         </div>
       </div>

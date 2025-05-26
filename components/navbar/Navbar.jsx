@@ -6,16 +6,14 @@ function NavItem({ href, text }) {
 
   return (
     <li>
-      <Link href={href}>
-        <a className="font-normal">
-          <p
-            className={`px-3 py-2 rounded-lg transition-all cursor-pointer ${
-              router.pathname == href ? "bg-gray-800" : "hover:bg-gray-900"
-            }`}
-          >
-            {text}
-          </p>
-        </a>
+      <Link href={href} className="font-normal">
+        <p
+          className={`px-3 py-2 rounded-lg transition-all cursor-pointer ${
+            router.pathname == href ? "bg-gray-800" : "hover:bg-gray-900"
+          }`}
+        >
+          {text}
+        </p>
       </Link>
     </li>
   );

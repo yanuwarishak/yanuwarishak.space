@@ -49,6 +49,8 @@ export default function Blog({ posts }) {
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
           <div className="h-48 w-full relative">
             <Image
+              width={50}
+              height={50}
               src={headerImage}
               layout="fill"
               objectFit="cover"

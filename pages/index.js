@@ -50,6 +50,8 @@ export default function Home() {
         <div className="flex flex-col items-center gap-4">
           <div className="relative w-20 h-20 xs:w-24 xs:h-24 md:w-32 md:h-32">
             <Image
+              width={50}
+              height={50}
               className="rounded-full my-auto"
               src={headerImage}
               alt="Yanuwar Ishak Avatar"
@@ -78,10 +80,11 @@ export default function Home() {
               <PostList posts={post} key={idx} />
             ))}
         </div>
-        <Link href="/blog">
-          <a className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end">
-            See all posts &#8594;
-          </a>
+        <Link
+          href="/blog"
+          className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end"
+        >
+          See all posts &#8594;
         </Link>
       </section>
       {/* Recent Projects Section */}
@@ -98,10 +101,11 @@ export default function Home() {
               <ProjectList project={project} key={idx} />
             ))}
         </div>
-        <Link href="/project">
-          <a className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end">
-            See all projects &#8594;
-          </a>
+        <Link
+          href="/project"
+          className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end"
+        >
+          See all projects &#8594;
         </Link>
       </section>
       {/* Tech Stack Section */}
@@ -120,6 +124,8 @@ export default function Home() {
             >
               <div className="relative w-2/3 h-2/3">
                 <Image
+                  width={50}
+                  height={50}
                   src={stack.url}
                   alt={stack.desc}
                   layout="fill"
@@ -129,10 +135,11 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link href="/tech">
-          <a className=" text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end">
-            See complete list &#8594;
-          </a>
+        <Link
+          href="/tech"
+          className="text-purple-400 hover:text-purple-300 w-max underline ease-in-out duration-300 self-end"
+        >
+          See complete list &#8594;
         </Link>
       </section>
     </MainLayout>

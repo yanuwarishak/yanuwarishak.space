@@ -8,31 +8,29 @@ const Headings = ({ headings, activeId, slug }) => {
     <ul className="flex flex-col gap-1">
       {headings.map((heading) => (
         <li key={heading.id} className="flex flex-col gap-1">
-          <Link href={`${slug}/#${heading.id}`}>
-            <a
-              className={`px-2 ${
-                heading.id == activeId
-                  ? "text-purple-400 border-l-2 border-purple-400 font-semibold"
-                  : "text-gray-300"
-              }`}
-            >
-              {heading.title}
-            </a>
+          <Link
+            href={`${slug}/#${heading.id}`}
+            className={`px-2 ${
+              heading.id == activeId
+                ? "text-purple-400 border-l-2 border-purple-400 font-semibold"
+                : "text-gray-300"
+            }`}
+          >
+            {heading.title}
           </Link>
           {heading.items.length > 0 && (
             <ul>
               {heading.items.map((child) => (
                 <li key={child.id}>
-                  <Link href={`${slug}/#${child.id}`}>
-                    <a
-                      className={`px-2 ml-4 ${
-                        child.id == activeId
-                          ? "text-purple-400 border-l-2 border-purple-400 font-semibold"
-                          : "text-gray-300"
-                      }`}
-                    >
-                      {child.title}
-                    </a>
+                  <Link
+                    href={`${slug}/#${child.id}`}
+                    className={`px-2 ml-4 ${
+                      child.id == activeId
+                        ? "text-purple-400 border-l-2 border-purple-400 font-semibold"
+                        : "text-gray-300"
+                    }`}
+                  >
+                    {child.title}
                   </Link>
                 </li>
               ))}

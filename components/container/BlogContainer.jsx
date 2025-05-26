@@ -38,6 +38,7 @@ export default function BlogContainer({ slug, post, children }) {
         {/* Post Thumbnail */}
         <div className="relative w-full h-80">
           <Image
+            width={250}
             className="rounded-lg"
             alt={post.title}
             src={post.image}
