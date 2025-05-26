@@ -20,7 +20,7 @@ export default function ProjectContainer({ slug, project, children }) {
 
   const publishedAt = new Date(project.publishedAt).toLocaleString(
     "en-US",
-    options
+    options,
   );
 
   return (
@@ -41,11 +41,13 @@ export default function ProjectContainer({ slug, project, children }) {
           {/* Project Thumbnail */}
           <div className="relative w-full h-80">
             <Image
+              width={50}
+              height={50}
               className="rounded-lg"
               alt={project.title}
               src={project.image}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               priority
             />
           </div>

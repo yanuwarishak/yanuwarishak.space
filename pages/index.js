@@ -56,7 +56,7 @@ export default function Home() {
               src={headerImage}
               alt="Yanuwar Ishak Avatar"
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               placeholder="blur"
               priority
             />
@@ -129,7 +129,7 @@ export default function Home() {
                   src={stack.url}
                   alt={stack.desc}
                   layout="fill"
-                  objectFit="contain"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </div>

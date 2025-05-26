@@ -56,7 +56,7 @@ export default function Tech() {
               height={50}
               src={headerImage}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               alt="Writing code on VS Code"
               placeholder="blur"
               sizes="92vw, min-width(480px) 50vw"
@@ -95,7 +95,7 @@ export default function Tech() {
                     src={stack.url}
                     alt={stack.desc}
                     layout="fill"
-                    objectFit="contain"
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               </div>

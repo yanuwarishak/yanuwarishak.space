@@ -72,7 +72,7 @@ export default function About() {
               className="filter scale-x-[-1]"
               src={headerImage}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               alt="A photo of Yanuwar Ishak"
               placeholder="blur"
               objectPosition="0% 50%"

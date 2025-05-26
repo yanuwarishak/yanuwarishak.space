@@ -20,7 +20,7 @@ export default function BlogContainer({ slug, post, children }) {
   };
   const publishedAt = new Date(post.publishedAt).toLocaleString(
     "en-US",
-    options
+    options,
   );
   return (
     <MainLayout
@@ -39,11 +39,12 @@ export default function BlogContainer({ slug, post, children }) {
         <div className="relative w-full h-80">
           <Image
             width={250}
+            height={250}
             className="rounded-lg"
             alt={post.title}
             src={post.image}
             layout="fill"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             priority
           />
         </div>

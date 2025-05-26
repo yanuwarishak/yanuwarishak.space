@@ -19,7 +19,7 @@ export default function ProjectList({ project }) {
             src={project.image}
             alt={project.title}
             layout="fill"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             sizes="92vw, min-width(640px) 360px"
           />
         </div>

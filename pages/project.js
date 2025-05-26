@@ -35,7 +35,7 @@ export default function Project({ projects }) {
   ];
   const [filter, setFilter] = useState("");
   const filteredProjects = projects.filter((project) =>
-    project.category.includes(filter)
+    project.category.includes(filter),
   );
 
   return (
@@ -66,7 +66,7 @@ export default function Project({ projects }) {
               height={50}
               src={headerImage}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               alt="Writing code on VS Code"
               placeholder="blur"
               sizes="92vw, min-width(480px) 50vw"

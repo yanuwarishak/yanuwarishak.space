@@ -27,7 +27,7 @@ function rightContent() {
 export default function Blog({ posts }) {
   const [keywords, setKeywords] = useState("");
   const filteredPosts = posts.filter((post) =>
-    post.frontmatter.title.toLowerCase().includes(keywords.toLowerCase())
+    post.frontmatter.title.toLowerCase().includes(keywords.toLowerCase()),
   );
   return (
     <MainLayout
@@ -53,7 +53,7 @@ export default function Blog({ posts }) {
               height={50}
               src={headerImage}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               alt="A photo of pen and paper"
               placeholder="blur"
               sizes="92vw, min-width(480px) 50vw"
