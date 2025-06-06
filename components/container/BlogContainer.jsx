@@ -1,27 +1,24 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import MainLayout from "layout/MainLayout";
-import ContentNav from "../ContentNav";
-import EditPost from "../edit-post/EditPost";
-import { ShareButton, TwitterShare } from "../share-button/ShareButton";
+import MainLayout from 'layout/MainLayout'
+import ContentNav from '../ContentNav'
+import EditPost from '../edit-post/EditPost'
+import { ShareButton, TwitterShare } from '../share-button/ShareButton'
 
 const editUrl = (slug) =>
-  `https://github.com/yanuwarishak/yanuwarishak.space/edit/main/data/blog/${slug}.mdx`;
+  `https://github.com/yanuwarishak/yanuwarishak.space/edit/main/data/blog/${slug}.mdx`
 
 function leftContent() {
-  return null;
+  return null
 }
 
 export default function BlogContainer({ slug, post, children }) {
   const options = {
-    day: "numeric",
-    year: "numeric",
-    month: "long",
-  };
-  const publishedAt = new Date(post.publishedAt).toLocaleString(
-    "en-US",
-    options,
-  );
+    day: 'numeric',
+    year: 'numeric',
+    month: 'long',
+  }
+  const publishedAt = new Date(post.publishedAt).toLocaleString('en-US', options)
   return (
     <MainLayout
       title={`${post.title} – Yanuwar Ishak`}
@@ -31,7 +28,7 @@ export default function BlogContainer({ slug, post, children }) {
       type="article"
       LeftContent={leftContent}
       RightContent={() => {
-        return <ContentNav slug={`/blog/${slug}`} />;
+        return <ContentNav slug={`/blog/${slug}`} />
       }}
     >
       <div className="w-full flex flex-col items-start justify-center gap-6">
@@ -43,8 +40,7 @@ export default function BlogContainer({ slug, post, children }) {
             className="rounded-lg"
             alt={post.title}
             src={post.image}
-            layout="fill"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
             priority
           />
         </div>
@@ -62,15 +58,12 @@ export default function BlogContainer({ slug, post, children }) {
               />
             </div>
             <p className="text-gray-200">
-              Yanuwar Ishak /{" "}
-              <span className="text-gray-400">{publishedAt}</span>
+              Yanuwar Ishak / <span className="text-gray-400">{publishedAt}</span>
             </p>
           </div>
         </div>
         {/* Post Title */}
-        <h1 className=" text-3xl md:leading-tight md:text-5xl font-bold">
-          {post.title}
-        </h1>
+        <h1 className=" text-3xl md:leading-tight md:text-5xl font-bold">{post.title}</h1>
         {/* Post Content */}
         <section className="prose w-full max-w-none">{children}</section>
         {/* Post Edit Button */}
@@ -92,5 +85,5 @@ export default function BlogContainer({ slug, post, children }) {
         </div>
       </div>
     </MainLayout>
-  );
+  )
 }

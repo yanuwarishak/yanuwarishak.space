@@ -8,5 +8,5 @@ export default function EditPost({ url }) {
     >
       <p className="px-2 py-1 bg-[#202020] rounded-md">Edit on Github</p>
     </a>
-  );
+  )
 }

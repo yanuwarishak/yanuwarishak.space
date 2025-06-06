@@ -1,27 +1,24 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import MainLayout from "layout/MainLayout";
-import ContentNav from "../ContentNav";
-import EditPost from "../edit-post/EditPost";
-import { ShareButton, TwitterShare } from "../share-button/ShareButton";
+import MainLayout from 'layout/MainLayout'
+import ContentNav from '../ContentNav'
+import EditPost from '../edit-post/EditPost'
+import { ShareButton, TwitterShare } from '../share-button/ShareButton'
 
 const editUrl = (slug) =>
-  `https://github.com/yanuwarishak/yanuwarishak.space/edit/main/data/project/${slug}.mdx`;
+  `https://github.com/yanuwarishak/yanuwarishak.space/edit/main/data/project/${slug}.mdx`
 
 function leftContent() {
-  return null;
+  return null
 }
 
 export default function ProjectContainer({ slug, project, children }) {
   const options = {
-    year: "numeric",
-    month: "long",
-  };
+    year: 'numeric',
+    month: 'long',
+  }
 
-  const publishedAt = new Date(project.publishedAt).toLocaleString(
-    "en-US",
-    options,
-  );
+  const publishedAt = new Date(project.publishedAt).toLocaleString('en-US', options)
 
   return (
     <MainLayout
@@ -32,7 +29,7 @@ export default function ProjectContainer({ slug, project, children }) {
       type="article"
       LeftContent={leftContent}
       RightContent={() => {
-        return <ContentNav slug={`/project/${slug}`} />;
+        return <ContentNav slug={`/project/${slug}`} />
       }}
     >
       <div className="w-full flex flex-col items-start justify-center gap-6">
@@ -46,8 +43,7 @@ export default function ProjectContainer({ slug, project, children }) {
               className="rounded-lg"
               alt={project.title}
               src={project.image}
-              layout="fill"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
               priority
             />
           </div>
@@ -64,7 +60,7 @@ export default function ProjectContainer({ slug, project, children }) {
                 />
               </div>
               <p className="text-gray-200">
-                Yanuwar Ishak /{" "}
+                Yanuwar Ishak /{' '}
                 <span className="text-gray-400">
                   {project.category[0]} / {publishedAt}
                 </span>
@@ -72,9 +68,7 @@ export default function ProjectContainer({ slug, project, children }) {
             </div>
           </div>
           {/* Project Title */}
-          <h1 className="text-3xl md:text-5xl font-bold -mt-1">
-            {project.title}
-          </h1>
+          <h1 className="text-3xl md:text-5xl font-bold -mt-1">{project.title}</h1>
           {/* Tech stack and share button */}
           <div className="flex flex-row w-full justify-between items-center gap-2">
             <div className="flex flex-row flex-wrap gap-2">
@@ -109,5 +103,5 @@ export default function ProjectContainer({ slug, project, children }) {
         </div>
       </div>
     </MainLayout>
-  );
+  )
 }

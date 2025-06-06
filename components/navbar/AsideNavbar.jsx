@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function NavItem({ href, text }) {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <li className="font-normal w-full cursor-pointer hover:bg-gray-800 hover:bg-opacity-75 rounded-lg">
@@ -10,15 +10,15 @@ function NavItem({ href, text }) {
         <p
           className={`text-normal p-2 transition-all ${
             router.pathname == href
-              ? "text-purple-400 border-r-4 border-purple-400 border-opacity-50 bg-gray-800 bg-opacity-75"
-              : "text-gray-300"
+              ? 'text-purple-400 border-r-4 border-purple-400 border-opacity-50 bg-gray-800 bg-opacity-75'
+              : 'text-gray-300'
           }`}
         >
           {text}
         </p>
       </Link>
     </li>
-  );
+  )
 }
 
 export default function AsideNavbar() {
@@ -32,5 +32,5 @@ export default function AsideNavbar() {
         <NavItem href="/about" text="🧑 About" />
       </ul>
     </nav>
-  );
+  )
 }

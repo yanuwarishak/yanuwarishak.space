@@ -1,22 +1,17 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import MainLayout from "layout/MainLayout";
+import MainLayout from 'layout/MainLayout'
 
-import { SpotifyWrapper } from "hooks/context/state";
-import SideNowPlaying from "@/components/spotify/SideNowPlaying";
-import ContentNav from "@/components/ContentNav";
+import { SpotifyWrapper } from 'hooks/context/state'
+import SideNowPlaying from '@/components/spotify/SideNowPlaying'
+import ContentNav from '@/components/ContentNav'
 
-import headerImage from "../public/assets/images/tech-banner.webp";
+import headerImage from '../public/assets/images/tech-banner.webp'
 
-import {
-  techStack,
-  minorStack,
-  currentlyLearning,
-  thingsToTry,
-} from "@/data/techstacks.data";
+import { techStack, minorStack, currentlyLearning, thingsToTry } from '@/data/techstacks.data'
 
 function leftContent() {
-  return null;
+  return null
 }
 
 function rightContent() {
@@ -27,16 +22,12 @@ function rightContent() {
       </SpotifyWrapper>
       <ContentNav />
     </>
-  );
+  )
 }
 
 export default function Tech() {
   return (
-    <MainLayout
-      title="Tech – Yanuwar Ishak"
-      LeftContent={leftContent}
-      RightContent={rightContent}
-    >
+    <MainLayout title="Tech – Yanuwar Ishak" LeftContent={leftContent} RightContent={rightContent}>
       {/* Page Header */}
       <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
@@ -45,8 +36,8 @@ export default function Tech() {
             <h1 className="text-5xl font-bold">Tech </h1>
           </span>
           <p className="mt-2 text-gray-400 leading-relaxed">
-            Here I listed all the technologies that I currently use and familiar
-            with as well as some that I've planned to learn.
+            Here I listed all the technologies that I currently use and familiar with as well as
+            some that I've planned to learn.
           </p>
         </div>
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
@@ -55,8 +46,7 @@ export default function Tech() {
               width={50}
               height={50}
               src={headerImage}
-              layout="fill"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
               alt="Writing code on VS Code"
               placeholder="blur"
               sizes="92vw, min-width(480px) 50vw"
@@ -64,7 +54,7 @@ export default function Tech() {
             />
           </div>
           <p className="text-xs text-gray-400">
-            Photo by Ferenc Almasi on{" "}
+            Photo by Ferenc Almasi on{' '}
             <a
               href="https://unsplash.com/photos/eYpcLDXHVb0"
               target="_blank"
@@ -94,8 +84,7 @@ export default function Tech() {
                     height={50}
                     src={stack.url}
                     alt={stack.desc}
-                    layout="fill"
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
               </div>
@@ -138,5 +127,5 @@ export default function Tech() {
         </div>
       </div>
     </MainLayout>
-  );
+  )
 }

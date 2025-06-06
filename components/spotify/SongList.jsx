@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 export default function SongList({ tracks }) {
   return (
@@ -25,5 +25,5 @@ export default function SongList({ tracks }) {
         </a>
       ))}
     </div>
-  );
+  )
 }

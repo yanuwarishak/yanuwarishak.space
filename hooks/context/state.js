@@ -1,17 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react'
 
-const SpotifyContext = createContext();
+const SpotifyContext = createContext()
 
 export function SpotifyWrapper({ children }) {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(true)
 
-  return (
-    <SpotifyContext.Provider value={{ isOpen, setOpen }}>
-      {children}
-    </SpotifyContext.Provider>
-  );
+  return <SpotifyContext.Provider value={{ isOpen, setOpen }}>{children}</SpotifyContext.Provider>
 }
 
 export function useSpotifyContext() {
-  return useContext(SpotifyContext);
+  return useContext(SpotifyContext)
 }

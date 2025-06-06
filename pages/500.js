@@ -1,5 +1,5 @@
-import Link from "next/link";
-import MainLayout from "layout/MainLayout";
+import Link from 'next/link'
+import MainLayout from 'layout/MainLayout'
 
 export default function ServerError() {
   return (
@@ -19,5 +19,5 @@ export default function ServerError() {
         </Link>
       </div>
     </MainLayout>
-  );
+  )
 }

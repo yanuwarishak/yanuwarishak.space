@@ -1,20 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
-import MainLayout from "layout/MainLayout";
-import { SpotifyWrapper } from "hooks/context/state";
+import MainLayout from 'layout/MainLayout'
+import { SpotifyWrapper } from 'hooks/context/state'
 
-import SideNowPlaying from "@/components/spotify/SideNowPlaying";
-import PostList from "@/components/post-list/PostList";
-import ProjectList from "@/components/project-list/ProjectList";
-import { SocialIcons } from "@/components/icons";
+import SideNowPlaying from '@/components/spotify/SideNowPlaying'
+import PostList from '@/components/post-list/PostList'
+import ProjectList from '@/components/project-list/ProjectList'
+import { SocialIcons } from '@/components/icons'
 
-import { featuredPost, featuredProject } from "@/data/featured.data";
-import { techStack } from "@/data/techstacks.data";
-import headerImage from "../public/assets/images/avatar.webp";
+import { featuredPost, featuredProject } from '@/data/featured.data'
+import { techStack } from '@/data/techstacks.data'
+import headerImage from '../public/assets/images/avatar.webp'
 
 function leftContent() {
-  return null;
+  return null
 }
 
 function rightContent() {
@@ -24,7 +24,7 @@ function rightContent() {
         <SideNowPlaying />
       </SpotifyWrapper>
     </>
-  );
+  )
 }
 
 export default function Home() {
@@ -40,9 +40,7 @@ export default function Home() {
             </p>
             <h1 className="text-4xl md:text-5xl font-bold">Yanuwar Ishak</h1>
           </span>
-          <h2 className="text-xl text-purple-400 font-semibold">
-            Front-end Developer
-          </h2>
+          <h2 className="text-xl text-purple-400 font-semibold">Front-end Developer</h2>
           <h2 className="text-gray-400 text-lg mb-2">
             Software engineer in learning mainly focused on Web Development.
           </h2>
@@ -55,8 +53,7 @@ export default function Home() {
               className="rounded-full my-auto"
               src={headerImage}
               alt="Yanuwar Ishak Avatar"
-              layout="fill"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
               placeholder="blur"
               priority
             />
@@ -69,16 +66,11 @@ export default function Home() {
       {/* Recent Posts Section */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
-          <h1 className="text-3xl font-semibold mr-0 md:mr-2">
-            Featured&nbsp;Posts
-          </h1>
+          <h1 className="text-3xl font-semibold mr-0 md:mr-2">Featured&nbsp;Posts</h1>
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
         <div className="flex flex-col gap-2">
-          {featuredPost &&
-            featuredPost.map((post, idx) => (
-              <PostList posts={post} key={idx} />
-            ))}
+          {featuredPost && featuredPost.map((post, idx) => <PostList posts={post} key={idx} />)}
         </div>
         <Link
           href="/blog"
@@ -90,16 +82,12 @@ export default function Home() {
       {/* Recent Projects Section */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
-          <h1 className="text-3xl font-semibold mr-0 md:mr-2">
-            Featured&nbsp;Projects
-          </h1>
+          <h1 className="text-3xl font-semibold mr-0 md:mr-2">Featured&nbsp;Projects</h1>
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {featuredProject &&
-            featuredProject.map((project, idx) => (
-              <ProjectList project={project} key={idx} />
-            ))}
+            featuredProject.map((project, idx) => <ProjectList project={project} key={idx} />)}
         </div>
         <Link
           href="/project"
@@ -111,9 +99,7 @@ export default function Home() {
       {/* Tech Stack Section */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-row w-full items-center">
-          <h1 className="text-3xl font-semibold mr-0 md:mr-2">
-            My&nbsp;Tech&nbsp;Stacks
-          </h1>
+          <h1 className="text-3xl font-semibold mr-0 md:mr-2">My&nbsp;Tech&nbsp;Stacks</h1>
           <hr className="border-1 border-gray-600 my-auto w-full hidden md:block" />
         </div>
         <div className="grid grid-cols-4 gap-3 items-center text-center h-24 md:h-32">
@@ -128,8 +114,7 @@ export default function Home() {
                   height={50}
                   src={stack.url}
                   alt={stack.desc}
-                  layout="fill"
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
             </div>
@@ -143,5 +128,5 @@ export default function Home() {
         </Link>
       </section>
     </MainLayout>
-  );
+  )
 }
