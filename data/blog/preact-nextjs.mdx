@@ -1,8 +1,8 @@
 ---
-title: "Menggunakan Preact pada Next.js"
-publishedAt: "2021-11-26"
-summary: "Apa itu Preact dan kapan waktu yang tepat untuk menggunakannya."
-image: "/assets/images/blog/nextjs-preact/banner.webp"
+title: 'Menggunakan Preact pada Next.js'
+publishedAt: '2021-11-26'
+summary: 'Apa itu Preact dan kapan waktu yang tepat untuk menggunakannya.'
+image: '/assets/images/blog/nextjs-preact/banner.webp'
 ---
 
 Kebanyakan Front-end developer pasti sudah cukup familiar dengan React.
@@ -54,13 +54,13 @@ const config = {
   //...snip
   resolve: {
     alias: {
-      react: "preact/compat",
-      "react-dom/test-utils": "preact/test-utils",
-      "react-dom": "preact/compat", // Must be below test-utils
-      "react/jsx-runtime": "preact/jsx-runtime",
+      react: 'preact/compat',
+      'react-dom/test-utils': 'preact/test-utils',
+      'react-dom': 'preact/compat', // Must be below test-utils
+      'react/jsx-runtime': 'preact/jsx-runtime',
     },
   },
-};
+}
 ```
 
 - Aliasing pada Parcel
@@ -102,14 +102,14 @@ module.exports = {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
-        react: "preact/compat",
-        "react-dom/test-utils": "preact/test-utils",
-        "react-dom": "preact/compat",
-      });
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat',
+      })
     }
-    return config;
+    return config
   },
-};
+}
 ```
 
 Kedua langkah tersebut akan secara otomatis merubah React menjadi Preact pada hasil production build.

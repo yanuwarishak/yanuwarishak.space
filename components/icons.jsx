@@ -73,7 +73,7 @@ export function SocialIcons() {
         </svg>
       </a>
     </div>
-  );
+  )
 }
 
 export function AboutIcon({ color }) {
@@ -94,7 +94,7 @@ export function AboutIcon({ color }) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
 
 export function BlogIcon({ color }) {
@@ -111,7 +111,7 @@ export function BlogIcon({ color }) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
 
 export function ProjectIcon({ color }) {
@@ -158,7 +158,7 @@ export function ProjectIcon({ color }) {
         />
       </g>
     </svg>
-  );
+  )
 }
 
 export function HomeIcon({ color }) {
@@ -175,7 +175,7 @@ export function HomeIcon({ color }) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
 
 export function ExpandIcon() {
@@ -192,7 +192,7 @@ export function ExpandIcon() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
 export function SpotifyIcon({ size }) {
@@ -211,5 +211,5 @@ export function SpotifyIcon({ size }) {
         fill="black"
       />
     </svg>
-  );
+  )
 }

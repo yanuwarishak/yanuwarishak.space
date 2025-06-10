@@ -1,19 +1,17 @@
-import { HomeIcon, ProjectIcon, BlogIcon, AboutIcon } from "./icons";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { HomeIcon, ProjectIcon, BlogIcon, AboutIcon } from './icons'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function NavItem({ href, Icon, text }) {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
-    <span className={`w-full ${router.pathname == href ? "bg-[#131313]" : ""}`}>
-      <Link href={href}>
-        <a className="flex items-center w-6 h-full m-auto" aria-label={text}>
-          <Icon color={router.pathname == href ? "#a78bfa" : "#616161"} />
-        </a>
+    <span className={`w-full ${router.pathname == href ? 'bg-[#131313]' : ''}`}>
+      <Link href={href} className="flex items-center w-6 h-full m-auto" aria-label={text}>
+        <Icon color={router.pathname == href ? '#a78bfa' : '#616161'} />
       </Link>
     </span>
-  );
+  )
 }
 
 export default function MenuButton() {
@@ -24,5 +22,5 @@ export default function MenuButton() {
       <NavItem href="/blog" text="Blog Page" Icon={BlogIcon} />
       <NavItem href="/about" text="About Page" Icon={AboutIcon} />
     </div>
-  );
+  )
 }

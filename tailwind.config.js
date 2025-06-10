@@ -1,86 +1,86 @@
-const { fontFamily, screens } = require("tailwindcss/defaultTheme");
+const { fontFamily, screens } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   purge: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./layout/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './layout/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      xs: "480px",
+      xs: '480px',
       ...screens,
     },
     extend: {
       gridTemplateColumns: {
-        tracklist: "fit-content(30px) fit-content(40px) 1fr",
-        layout: "1fr minmax(600px, 672px) minmax(175px, 1fr)",
-        mediumLayout: "minmax(0px, 192px) minmax(460px, 672px)",
+        tracklist: 'fit-content(30px) fit-content(40px) 1fr',
+        layout: '1fr minmax(600px, 672px) minmax(175px, 1fr)',
+        mediumLayout: 'minmax(0px, 192px) minmax(460px, 672px)',
       },
       screens: {
-        "2lg": "1120px",
+        '2lg': '1120px',
       },
       fontFamily: {
-        sans: ["IBM Plex Sans", ...fontFamily.sans],
+        sans: ['IBM Plex Sans', ...fontFamily.sans],
       },
       keyframes: {
         slideDown: {
-          "0%": { transform: "translateY(-40px)", opacity: 0 },
-          "100%": { transform: "translateY(0px)", opacity: 1 },
+          '0%': { transform: 'translateY(-40px)', opacity: 0 },
+          '100%': { transform: 'translateY(0px)', opacity: 1 },
         },
         zoom: {
-          transform: "scale(1.5)",
+          transform: 'scale(1.5)',
         },
       },
       animation: {
-        slideDown: "slideDown 0.25s ease-in-out",
-        zoom: "zoom 0.25s ease-in-out",
+        slideDown: 'slideDown 0.25s ease-in-out',
+        zoom: 'zoom 0.25s ease-in-out',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            fontSize: "1rem",
-            color: theme("colors.gray.300"),
+            fontSize: '1rem',
+            color: theme('colors.gray.300'),
             a: {
-              color: theme("colors.purple.400"),
-              "&:hover": {
-                color: theme("colors.purple.600"),
+              color: theme('colors.purple.400'),
+              '&:hover': {
+                color: theme('colors.purple.600'),
               },
-              code: { color: theme("colors.purple.400") },
+              code: { color: theme('colors.purple.400') },
             },
             blockquote: {
-              borderLeftColor: theme("colors.gray.700"),
-              color: theme("colors.gray.200"),
+              borderLeftColor: theme('colors.gray.700'),
+              color: theme('colors.gray.200'),
             },
-            "h1,h2,h3,h4": {
-              color: theme("colors.gray.100"),
+            'h1,h2,h3,h4': {
+              color: theme('colors.gray.100'),
             },
-            hr: { borderColor: theme("colors.gray.700") },
+            hr: { borderColor: theme('colors.gray.700') },
             ol: {
               li: {
-                "&:before": { color: theme("colors.gray.500") },
+                '&:before': { color: theme('colors.gray.500') },
               },
             },
             ul: {
               li: {
-                "&:before": { backgroundColor: theme("colors.gray.500") },
+                '&:before': { backgroundColor: theme('colors.gray.500') },
               },
             },
-            strong: { color: theme("colors.gray.100") },
+            strong: { color: theme('colors.gray.100') },
             thead: {
-              color: theme("colors.gray.100"),
-              borderBottomColor: theme("colors.gray.600"),
+              color: theme('colors.gray.100'),
+              borderBottomColor: theme('colors.gray.600'),
             },
             tbody: {
               tr: {
-                borderBottomColor: theme("colors.gray.700"),
+                borderBottomColor: theme('colors.gray.700'),
               },
             },
-            code: { color: theme("colors.pink.500") },
-            "blockquote p:first-of-type::before": false,
-            "blockquote p:last-of-type::after": false,
+            code: { color: theme('colors.pink.500') },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
           },
         },
       }),
@@ -89,5 +89,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [require('@tailwindcss/typography')],
+}

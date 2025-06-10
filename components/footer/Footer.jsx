@@ -1,5 +1,5 @@
-import Link from "next/link";
-import NowPlaying from "@/components/spotify/NowPlaying";
+import Link from 'next/link'
+import NowPlaying from '@/components/spotify/NowPlaying'
 
 const ExternalLink = ({ href, text }) => (
   <a
@@ -10,15 +10,13 @@ const ExternalLink = ({ href, text }) => (
   >
     <p>{text}</p>
   </a>
-);
+)
 
 const InternalLink = ({ href, text }) => (
-  <Link href={href}>
-    <a className="text-gray-400 hover:text-gray-300 transition">
-      <p>{text}</p>
-    </a>
+  <Link href={href} className="text-gray-400 hover:text-gray-300 transition">
+    <p>{text}</p>
   </Link>
-);
+)
 
 export default function Footer() {
   return (
@@ -38,14 +36,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-4">
           <ExternalLink href="https://github.com/yanuwarishak" text="GitHub" />
-          <ExternalLink
-            href="https://www.linkedin.com/in/yanuwar-ishak/"
-            text="LinkedIn"
-          />
-          <ExternalLink
-            href="https://www.behance.net/yanuwarishak"
-            text="Behance"
-          />
+          <ExternalLink href="https://www.linkedin.com/in/yanuwar-ishak/" text="LinkedIn" />
           <ExternalLink
             href="https://www.youtube.com/channel/UC-bcZ3seq6f8W_v6qTwU6mQ"
             text="YouTube"
@@ -63,5 +54,5 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} All rights reserved
       </p>
     </div>
-  );
+  )
 }

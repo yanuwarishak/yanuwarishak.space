@@ -9,11 +9,11 @@
 }
 
 @font-face {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 100 900;
   font-display: optional;
-  src: url(/fonts/ibm-plex-sans-var.woff2) format("woff2");
+  src: url(/fonts/ibm-plex-sans-var.woff2) format('woff2');
 }
 
 html {
@@ -68,7 +68,7 @@ h3 {
 
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
+  margin-top: 0 !important;
   margin-bottom: 1.25em !important;
 }
 
@@ -131,8 +131,8 @@ h3 {
   @apply text-yellow-500;
 }
 
-code[class*="hljs language-"],
-pre[class*="hljs language-"] {
+code[class*='hljs language-'],
+pre[class*='hljs language-'] {
   @apply text-gray-50;
 }
 

@@ -1,17 +1,17 @@
-import { useState } from "react";
-import Image from "next/image";
-import { getAllPosts } from "utils/getLocalData";
+import { useState } from 'react'
+import Image from 'next/image'
+import { getAllPosts } from 'utils/getLocalData'
 
-import PostList from "@/components/post-list/PostList";
+import PostList from '@/components/post-list/PostList'
 
-import MainLayout from "layout/MainLayout";
-import { SpotifyWrapper } from "hooks/context/state";
-import SideNowPlaying from "@/components/spotify/SideNowPlaying";
+import MainLayout from 'layout/MainLayout'
+import { SpotifyWrapper } from 'hooks/context/state'
+import SideNowPlaying from '@/components/spotify/SideNowPlaying'
 
-import headerImage from "../public/assets/images/blog-banner.webp";
+import headerImage from '../public/assets/images/blog-banner.webp'
 
 function leftContent() {
-  return null;
+  return null
 }
 
 function rightContent() {
@@ -21,20 +21,16 @@ function rightContent() {
         <SideNowPlaying />
       </SpotifyWrapper>
     </>
-  );
+  )
 }
 
 export default function Blog({ posts }) {
-  const [keywords, setKeywords] = useState("");
+  const [keywords, setKeywords] = useState('')
   const filteredPosts = posts.filter((post) =>
     post.frontmatter.title.toLowerCase().includes(keywords.toLowerCase())
-  );
+  )
   return (
-    <MainLayout
-      title="Blog – Yanuwar Ishak"
-      LeftContent={leftContent}
-      RightContent={rightContent}
-    >
+    <MainLayout title="Blog – Yanuwar Ishak" LeftContent={leftContent} RightContent={rightContent}>
       {/* Page Header */}
       <div className="w-full flex flex-col-reverse xs:flex-row justify-between md:items-start gap-6">
         <div className="w-full h-full md:w-2/5 flex flex-col justify-start">
@@ -47,19 +43,11 @@ export default function Blog({ posts }) {
           </p>
         </div>
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
-          <div className="h-48 w-full relative">
-            <Image
-              src={headerImage}
-              layout="fill"
-              objectFit="cover"
-              alt="A photo of pen and paper"
-              placeholder="blur"
-              sizes="92vw, min-width(480px) 50vw"
-              priority
-            />
+          <div className="w-full relative h-48 overflow-hidden">
+            <Image src={headerImage} alt="A photo of pen and paper" priority />
           </div>
           <p className="text-xs text-gray-400">
-            Photo by Jan Kahánek on{" "}
+            Photo by Jan Kahánek on{' '}
             <a
               href="https://unsplash.com/photos/g3O5ZtRk2E4"
               target="_blank"
@@ -101,24 +89,22 @@ export default function Blog({ posts }) {
       {/* Page Content */}
       <div className="flex flex-col gap-2">
         {!filteredPosts.length && (
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
-            No posts found.
-          </p>
+          <p className="mb-4 text-gray-600 dark:text-gray-400">No posts found.</p>
         )}
         {filteredPosts.map((post, idx) => (
           <PostList posts={post} key={idx} />
         ))}
       </div>
     </MainLayout>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts("data/blog");
+  const posts = getAllPosts('data/blog')
 
   return {
     props: {
       posts,
     },
-  };
+  }
 }

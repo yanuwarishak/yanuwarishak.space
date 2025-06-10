@@ -1,6 +1,6 @@
-import MenuButton from "@/components/MenuButton";
-import "styles/global.css";
-import Script from "next/script";
+import MenuButton from '@/components/MenuButton'
+import 'styles/global.css'
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       </div>
       <MenuButton />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

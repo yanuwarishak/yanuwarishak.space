@@ -1,27 +1,27 @@
-import useSWR from "swr";
-import { SpotifyIcon } from "@/components/icons";
+import useSWR from 'swr'
+import { SpotifyIcon } from '@/components/icons'
 
 export default function NowPlaying() {
-  const fetcher = (url) => fetch(url).then((res) => res.json());
-  const { data, error } = useSWR("/api/spotify/now-playing", fetcher, {
+  const fetcher = (url) => fetch(url).then((res) => res.json())
+  const { data, error } = useSWR('/api/spotify/now-playing', fetcher, {
     revalidateOnFocus: true,
     refreshInterval: 480000,
-  });
+  })
 
   let song = {
     isPlaying: false,
-    artist: "Local File",
-    title: "",
-    link: "",
-  };
+    artist: 'Local File',
+    title: '',
+    link: '',
+  }
 
   if (data) {
     song = {
       isPlaying: data.is_playing,
       title: data?.item?.name,
-      artist: data?.item?.artists?.map((_artist) => _artist.name).join(", "),
+      artist: data?.item?.artists?.map((_artist) => _artist.name).join(', '),
       link: data?.item?.external_urls?.spotify,
-    };
+    }
   }
 
   return (
@@ -44,9 +44,7 @@ export default function NowPlaying() {
               {song.title}
             </p>
           )}
-          <p className="text-sm align-text-bottom">
-            by {song.artist ? song.artist : "Local File"}
-          </p>
+          <p className="text-sm align-text-bottom">by {song.artist ? song.artist : 'Local File'}</p>
         </div>
       ) : (
         <div className="flex flex-col gap-2">
@@ -59,11 +57,9 @@ export default function NowPlaying() {
           >
             <SpotifyIcon size="40px" />
           </a>
-          <p className="mx-auto text-sm">
-            Currently not playing music on Spotify
-          </p>
+          <p className="mx-auto text-sm">Currently not playing music on Spotify</p>
         </div>
       )}
     </div>
-  );
+  )
 }
