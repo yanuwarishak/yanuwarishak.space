@@ -49,17 +49,8 @@ export default function Project({ projects }) {
           </p>
         </div>
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
-          <div className="h-48 w-full relative">
-            <Image
-              width={50}
-              height={50}
-              src={headerImage}
-              style={{ objectFit: 'cover' }}
-              alt="Writing code on VS Code"
-              placeholder="blur"
-              sizes="92vw, min-width(480px) 50vw"
-              priority
-            />
+          <div className="w-full relative h-48 overflow-hidden">
+            <Image src={headerImage} alt="Writing code on VS Code" />
           </div>
           <p className="text-xs text-gray-400">
             Photo by Marvin Meyer on{' '}

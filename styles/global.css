@@ -68,7 +68,7 @@ h3 {
 
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
+  margin-top: 0 !important;
   margin-bottom: 1.25em !important;
 }
 

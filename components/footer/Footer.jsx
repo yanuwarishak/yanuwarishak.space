@@ -37,7 +37,6 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <ExternalLink href="https://github.com/yanuwarishak" text="GitHub" />
           <ExternalLink href="https://www.linkedin.com/in/yanuwar-ishak/" text="LinkedIn" />
-          <ExternalLink href="https://www.behance.net/yanuwarishak" text="Behance" />
           <ExternalLink
             href="https://www.youtube.com/channel/UC-bcZ3seq6f8W_v6qTwU6mQ"
             text="YouTube"

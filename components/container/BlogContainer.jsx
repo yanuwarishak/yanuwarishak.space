@@ -33,16 +33,8 @@ export default function BlogContainer({ slug, post, children }) {
     >
       <div className="w-full flex flex-col items-start justify-center gap-6">
         {/* Post Thumbnail */}
-        <div className="relative w-full h-80">
-          <Image
-            width={250}
-            height={250}
-            className="rounded-lg"
-            alt={post.title}
-            src={post.image}
-            style={{ objectFit: 'cover' }}
-            priority
-          />
+        <div className="relative w-full h-80 overflow-hidden">
+          <Image src={post.image} alt={post.title} fill className="rounded-lg object-cover" />
         </div>
         {/* Post Information */}
         <div className="flex flex-row w-full items-center justify-between">

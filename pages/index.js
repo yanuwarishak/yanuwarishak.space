@@ -46,17 +46,9 @@ export default function Home() {
           </h2>
         </div>
         <div className="flex flex-col items-center gap-4">
+          {/* <div className="relative w-20 h-20 xs:w-24 xs:h-24 md:w-32 md:h-32"> */}
           <div className="relative w-20 h-20 xs:w-24 xs:h-24 md:w-32 md:h-32">
-            <Image
-              width={50}
-              height={50}
-              className="rounded-full my-auto"
-              src={headerImage}
-              alt="Yanuwar Ishak Avatar"
-              style={{ objectFit: 'cover' }}
-              placeholder="blur"
-              priority
-            />
+            <Image className="rounded-full my-auto" src={headerImage} alt="Yanuwar Ishak Avatar" />
           </div>
           <div className="hidden md:block">
             <SocialIcons />

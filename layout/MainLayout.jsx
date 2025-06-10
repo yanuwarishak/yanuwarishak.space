@@ -41,7 +41,7 @@ export default function MainLayout(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <div className="flex flex-col self-center relative mx-auto md:grid md:grid-cols-mediumLayout lg:grid-cols-layout p-6 xs:px-4 md:p-6 gap-4">
+      <div className="min-h-screen w-full flex flex-col self-center relative mx-auto md:grid md:grid-cols-mediumLayout lg:grid-cols-layout p-6 xs:px-4 md:p-6 gap-4">
         {/* Left Container */}
         <aside className="relative hidden md:flex md:flex-col w-full items-end">
           <div className="sticky top-6 w-full 2lg:w-48 flex flex-col items-end">
@@ -52,8 +52,10 @@ export default function MainLayout(props) {
         {/* Main Content */}
         <div className="flex flex-col justify-start gap-12 md:gap-8">
           <Navbar />
-          <main className="flex flex-col min-h-screen gap-6">{children}</main>
-          <Footer />
+          <main className="flex flex-col gap-6">{children}</main>
+          <div className="mt-auto">
+            <Footer />
+          </div>
         </div>
         {/* Right Container */}
         <aside className="relative hidden lg:flex lg:flex-col w-full">

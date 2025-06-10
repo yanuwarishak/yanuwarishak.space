@@ -20,7 +20,7 @@ function rightContent() {
       <SpotifyWrapper>
         <SideNowPlaying />
       </SpotifyWrapper>
-      <ContentNav />
+      <ContentNav slug="/tech" />
     </>
   )
 }
@@ -41,17 +41,8 @@ export default function Tech() {
           </p>
         </div>
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
-          <div className="h-48 w-full relative">
-            <Image
-              width={50}
-              height={50}
-              src={headerImage}
-              style={{ objectFit: 'cover' }}
-              alt="Writing code on VS Code"
-              placeholder="blur"
-              sizes="92vw, min-width(480px) 50vw"
-              priority
-            />
+          <div className="w-full relative h-48 overflow-hidden">
+            <Image src={headerImage} alt="Writing code on VS Code" />
           </div>
           <p className="text-xs text-gray-400">
             Photo by Ferenc Almasi on{' '}
@@ -79,13 +70,7 @@ export default function Tech() {
                 key={idx}
               >
                 <div className="relative w-2/3 h-2/3">
-                  <Image
-                    width={50}
-                    height={50}
-                    src={stack.url}
-                    alt={stack.desc}
-                    style={{ objectFit: 'contain' }}
-                  />
+                  <Image fill src={stack.url} alt={stack.desc} />
                 </div>
               </div>
             ))}
@@ -108,19 +93,6 @@ export default function Tech() {
         <div className="flex flex-col gap-2">
           {currentlyLearning.map((subject, idx) => (
             <div key={idx} className="bg-green-900 p-2 flex w-full rounded-md">
-              {subject}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="w-full bg-[#264863] p-4 rounded-md">
-        <h2 className="text-lg font-semibold mb-1" id="to-try">
-          Planning to try
-        </h2>
-        <p className="mb-4 text-gray-300">Things that caught my attention</p>
-        <div className="flex flex-col gap-2">
-          {thingsToTry.map((subject, idx) => (
-            <div key={idx} className="bg-[#163249] p-2 flex w-full rounded-md">
               {subject}
             </div>
           ))}

@@ -9,15 +9,7 @@ export default function ProjectList({ project }) {
       </p>
       <Link href={`/project/${project.slug}`}>
         <div className="relative w-full h-48">
-          <Image
-            className="cursor-pointer"
-            width={250}
-            height={250}
-            src={project.image}
-            alt={project.title}
-            // style={{ objectFit: "cover" }}
-            sizes="92vw, min-width(640px) 360px"
-          />
+          <Image className="cursor-pointer" fill src={project.image} alt={project.title} />
         </div>
       </Link>
       <div className="flex flex-col w-full p-2 py-3 rounded-b-xl cursor-default overflow-hidden">

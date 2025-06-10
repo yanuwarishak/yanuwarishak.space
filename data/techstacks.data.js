@@ -18,7 +18,8 @@ export const techStack = [
 ]
 
 export const minorStack = [
-  'Tailwind',
+  'TypeScript',
+  'Tailwind CSS',
   'MongoDB',
   'Firebase',
   'Apollo Client',
@@ -31,14 +32,4 @@ export const minorStack = [
   'CSS',
 ]
 
-export const currentlyLearning = [
-  'React Server Component',
-  'Nextjs Edge Functions and Middleware',
-  'Vue.js',
-  'Nuxt.js',
-  'React Typescript',
-  'GraphQL with Node.js',
-  'React Native',
-]
-
-export const thingsToTry = ['Dapps with Ethereum & Solidity', 'Go', 'WASM']
+export const currentlyLearning = ['Golang']

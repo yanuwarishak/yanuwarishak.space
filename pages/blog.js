@@ -43,17 +43,8 @@ export default function Blog({ posts }) {
           </p>
         </div>
         <div className="flex flex-col text-center gap-2 w-full md:w-3/5">
-          <div className="h-48 w-full relative">
-            <Image
-              width={50}
-              height={50}
-              src={headerImage}
-              style={{ objectFit: 'cover' }}
-              alt="A photo of pen and paper"
-              placeholder="blur"
-              sizes="92vw, min-width(480px) 50vw"
-              priority
-            />
+          <div className="w-full relative h-48 overflow-hidden">
+            <Image src={headerImage} alt="A photo of pen and paper" priority />
           </div>
           <p className="text-xs text-gray-400">
             Photo by Jan Kahánek on{' '}
