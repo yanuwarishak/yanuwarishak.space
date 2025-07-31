@@ -1,0 +1,165 @@
+---
+title: 'What actually is Array (Actual question, I'm not explaining it)'
+publishedAt: '2025-07-31'
+summary: 'Primeagen said const a = [] is not array, so I need to understand what it actually is'
+image: '/assets/images/blog/2021-rewind/banner.webp'
+---
+
+# Understanding ArrayBuffer and Typed Arrays in JavaScript: The Drawer, Lids, and Puzzle Pieces Analogy
+
+If you’ve ever worked with JavaScript’s `ArrayBuffer` and typed arrays like `Uint8Array` and `Uint16Array`, you might have found yourself wondering:
+
+- What exactly is an `ArrayBuffer`?
+- How do typed arrays relate to it?
+- Why do the outputs of `Uint8Array` and `Uint16Array` look different?
+- What’s this “endian” thing all about?
+
+Let’s unpack all of this in an intuitive way, using some simple analogies: **drawers and lids**, and **puzzle pieces**.
+
+---
+
+## What is an ArrayBuffer?
+
+Think of an `ArrayBuffer` as a **drawer with compartments** — but instead of holding socks or papers, it holds raw memory: a fixed number of bytes.
+
+For example:
+
+~~~js
+const a = new ArrayBuffer(6);
+~~~
+
+This is like having a drawer with **6 compartments**, each able to store 1 byte (8 bits) of data.
+
+Right now, these compartments are **empty**, meaning they don’t have any meaningful value until we put something in them.
+
+---
+
+## What is a TypedArray (like Uint8Array)?
+
+An `ArrayBuffer` is just raw memory — it doesn’t know how to interpret what’s inside. To read or write values meaningfully, you use a **typed array**, which acts like a **lid or organizer tray** that fits exactly over the drawer, defining how to access the compartments.
+
+For instance:
+
+~~~js
+const a8 = new Uint8Array(a);
+~~~
+
+`Uint8Array` means **each lid covers exactly 1 compartment (1 byte)**. So, with a 6-compartment drawer, you get 6 lids to open — one for each byte.
+
+You can think of it like this:
+
+- **`ArrayBuffer`**: the raw drawer with compartments.
+- **`Uint8Array`**: a lid that fits perfectly over each single compartment.
+
+When you write:
+
+~~~js
+a8[0] = 123;
+~~~
+
+You put the number `123` into the **first compartment**. This updates the raw memory in the drawer.
+
+If you print the `ArrayBuffer` in Node.js after this, you might see something like:
+
+~~~js
+ArrayBuffer { [Uint8Contents]: <7b 00 00 00 00 00>, byteLength: 6 }
+~~~
+
+`7b` in hexadecimal equals 123 in decimal — showing the first byte was updated.
+
+---
+
+## Why Do Different Typed Arrays Show Different Lengths?
+
+Suppose you create:
+
+~~~js
+const buffer = new ArrayBuffer(4);
+const u8 = new Uint8Array(buffer);   // 4 compartments
+const u16 = new Uint16Array(buffer); // lids that cover 2 compartments each
+~~~
+
+- `Uint8Array` has **4 elements**, because each element is 1 byte.
+- `Uint16Array` has **2 elements**, because each element covers **2 bytes** (2 compartments at once).
+
+---
+
+## The Drawer and Lid Analogy: Recap
+
+- **`ArrayBuffer`**: The drawer with fixed-size compartments (bytes).
+- **`Uint8Array`**: Small lids opening 1 compartment each → more lids fit.
+- **`Uint16Array`**: Bigger lids opening 2 compartments each → fewer lids fit.
+
+So you’re not changing the memory size, just how you view and access it!
+
+---
+
+## Why Do the Values Differ When Read via Uint8Array vs Uint16Array? — The Puzzle Analogy
+
+Imagine the drawer compartments each contain one puzzle piece with a number:
+
+~~~js
+[1][2][3][4]
+~~~
+
+### Using `Uint8Array` (small lids):
+
+You pick up **each puzzle piece individually** and see:
+
+~~~js
+[1][2][3][4]
+~~~
+
+
+Each number is exactly what’s in each compartment.
+
+---
+
+### Using `Uint16Array` (bigger lids):
+
+You pick up **two puzzle pieces at once**, and combine them into a single bigger piece:
+
+- Combine pieces 1 and 2:  
+  - The first piece is the "lower" part (value 1)  
+  - The second piece is the "higher" part (value 2) multiplied by 256 (more on why soon)  
+  - Result: `1 + (2 × 256) = 513`
+
+- Combine pieces 3 and 4 similarly:  
+  - `3 + (4 × 256) = 1027`
+
+So the array becomes:
+
+~~~js
+[513, 1027]
+~~~
+
+---
+
+## Why Multiply by 256?
+
+Each puzzle piece (byte) can represent values from 0 to 255 (since 8 bits can store 2^8 = 256 values).
+
+When you combine two pieces to form a larger number, the **second piece represents the "high part" of the number** and thus is multiplied by 256 to shift it into the correct place value, just like how in base-10, the tens place is multiplied by 10.
+
+---
+
+## What is Endianness?
+
+Endianness describes **the order in which bytes (puzzle pieces) are stored and read**.
+
+- **Little-endian** means the **least significant byte (lower value)** comes first. So the combined number’s bytes are stored as `[1][2]`.
+- **Big-endian** means the **most significant byte (higher value)** comes first. So the combined number’s bytes are stored as `[2][1]`.
+
+Most modern computers use **little-endian**, so JavaScript’s typed arrays interpret multi-byte values this way by default.
+
+---
+
+## Summary
+
+- `ArrayBuffer` is raw memory — like a drawer with fixed compartments.
+- Typed arrays are lids of different sizes that fit the drawer — controlling how many compartments they open at once.
+- Reading with different lids changes how bytes are grouped and interpreted, which changes the values you see.
+- The puzzle analogy shows how combining small pieces into bigger ones changes the value.
+- Endianness is about the order of these pieces — little-endian stores the lower value byte first.
+
+---
